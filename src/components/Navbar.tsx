@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, LogOut } from "lucide-react";
+import { Menu, X, LogOut, Moon, Sun } from "lucide-react";
 import { useState } from "react";
+import { useTheme } from "next-themes";
 import { useAuth } from "@/hooks/useAuth";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { user, signOut } = useAuth();
+  const { theme, setTheme } = useTheme();
+
+  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
   const handleSignOut = async () => {
     await signOut();
@@ -31,7 +35,11 @@ const Navbar = () => {
           <Link to="/resources" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Resources</Link>
         </div>
 
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-2">
+          <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme">
+            <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+          </Button>
           {user ? (
             <>
               <Button variant="ghost" size="sm" asChild>
@@ -69,22 +77,28 @@ const Navbar = () => {
           <Link to="/categories" className="block text-sm py-2 text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>Categories</Link>
           <Link to="/prompts" className="block text-sm py-2 text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>Prompt Library</Link>
           <Link to="/resources" className="block text-sm py-2 text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>Resources</Link>
-          <div className="flex gap-2 pt-2">
-            {user ? (
-              <Button variant="outline" className="flex-1" onClick={handleSignOut}>
-                <LogOut className="h-4 w-4 mr-1" />
-                Log Out
-              </Button>
-            ) : (
-              <>
-                <Button variant="outline" asChild className="flex-1">
-                  <Link to="/auth" onClick={() => setMobileOpen(false)}>Log In</Link>
+          <div className="flex items-center justify-between pt-2">
+            <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme">
+              <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            </Button>
+            <div className="flex gap-2">
+              {user ? (
+                <Button variant="outline" onClick={handleSignOut}>
+                  <LogOut className="h-4 w-4 mr-1" />
+                  Log Out
                 </Button>
-                <Button asChild className="flex-1 gradient-primary border-0">
-                  <Link to="/auth?signup=true" onClick={() => setMobileOpen(false)}>Sign Up</Link>
-                </Button>
-              </>
-            )}
+              ) : (
+                <>
+                  <Button variant="outline" asChild>
+                    <Link to="/auth" onClick={() => setMobileOpen(false)}>Log In</Link>
+                  </Button>
+                  <Button asChild className="gradient-primary border-0">
+                    <Link to="/auth?signup=true" onClick={() => setMobileOpen(false)}>Sign Up</Link>
+                  </Button>
+                </>
+              )}
+            </div>
           </div>
         </div>
       )}
