@@ -20,7 +20,7 @@ const displayNameSchema = z
   .max(100, "Display name must be less than 100 characters");
 
 const Profile = () => {
-  const { user } = useAuth();
+  const { user, refreshDisplayName } = useAuth();
   const { user: appUser } = useAppStore();
   const [displayName, setDisplayName] = useState("");
   const [loading, setLoading] = useState(true);
@@ -32,7 +32,7 @@ const Profile = () => {
 
     const fetchProfile = async () => {
       const { data, error } = await supabase
-        .from("profiles" as any)
+        .from("profiles")
         .select("display_name")
         .eq("user_id", user.id)
         .maybeSingle();
@@ -40,7 +40,7 @@ const Profile = () => {
       if (error) {
         console.error("Failed to fetch profile:", error.message);
       } else if (data) {
-        setDisplayName((data as any).display_name || "");
+        setDisplayName(data.display_name || "");
       }
       setLoading(false);
     };
@@ -60,14 +60,15 @@ const Profile = () => {
     setSaving(true);
 
     const { error: updateError } = await supabase
-      .from("profiles" as any)
-      .update({ display_name: result.data } as any)
+      .from("profiles")
+      .update({ display_name: result.data })
       .eq("user_id", user.id);
 
     if (updateError) {
       toast.error("Failed to update profile. Please try again.");
     } else {
       toast.success("Profile updated successfully!");
+      await refreshDisplayName();
     }
     setSaving(false);
   };
