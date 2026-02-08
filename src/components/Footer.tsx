@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -7,9 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="h-8 w-8 rounded-lg gradient-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">AI</span>
-              </div>
+              <img src={logo} alt="LearnGPT" className="h-8 w-8 rounded-lg object-contain" />
               <span className="font-display font-bold text-lg">LearnGPT</span>
             </div>
             <p className="text-sm text-muted-foreground">
