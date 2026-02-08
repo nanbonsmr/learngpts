@@ -4,6 +4,8 @@ import lesson51Image from "@/assets/lessons/lesson-5-1-code.jpg";
 import lesson52Image from "@/assets/lessons/lesson-5-2-debug.jpg";
 import lesson53Image from "@/assets/lessons/lesson-5-3-api.jpg";
 import content51Code from "@/assets/lessons/content/content-5-1-code.jpg";
+import content52Debug from "@/assets/lessons/content/content-5-2-debug.jpg";
+import content53Api from "@/assets/lessons/content/content-5-3-api.jpg";
 import type { Category } from "./types";
 
 const module5: Category = {
@@ -53,6 +55,9 @@ const module5: Category = {
       id: "5-2-debugging",
       title: "Lesson 5.2 – Debugging & Explaining Code",
       image: lesson52Image,
+      contentImages: [
+        { src: content52Debug, alt: "Code debugging with magnifying glass and error resolution", caption: "AI-assisted debugging: paste your error + context and get instant diagnosis and fix" },
+      ],
       description:
         "Debugging is where ChatGPT truly shines — and where it saves developers the most time. Studies show developers spend 35-50% of their time debugging (Cambridge University), making this AI's highest-ROI coding use case.\n\n**Finding Errors:**\n• Paste your code + error message → get explanation and fix.\n• Identify logical errors that don't throw exceptions.\n• Spot performance anti-patterns and memory leaks.\n• Detect security vulnerabilities (SQL injection, XSS, etc.).\n\n**Explaining Code:**\n• Line-by-line explanations at any skill level.\n• Translate code logic into plain English.\n• Explain complex algorithms, design patterns, and architectures.\n• Understand legacy code or unfamiliar codebases.\n\n**The Debugging Prompt Formula:**\n1. **Error message** — Include the FULL error, including stack trace.\n2. **Code context** — Not just the failing line, but surrounding functions.\n3. **Expected vs actual** — \"I expected X to happen, but Y happened instead.\"\n4. **Environment** — Language version, framework, OS, relevant packages.\n5. **What you've tried** — Prevents ChatGPT from suggesting things you've already done.\n\n**Security Review:**\nAsk ChatGPT: \"Review this code for security vulnerabilities. Check for: SQL injection, XSS, CSRF, authentication bypasses, and data exposure.\" This catches issues that many developers miss.",
       examplePrompt:
@@ -84,6 +89,9 @@ const module5: Category = {
       id: "5-3-project-api",
       title: "Lesson 5.3 – Project & API Integration",
       image: lesson53Image,
+      contentImages: [
+        { src: content53Api, alt: "API integration architecture with project structure and cloud endpoints", caption: "Full-stack workflow: plan architecture, build APIs, integrate services, and deploy" },
+      ],
       description:
         "ChatGPT can help you plan entire projects and integrate APIs — tasks that traditionally require senior-level experience.\n\n**Project Planning:**\n• Generate project ideas based on your skill level and interests.\n• Create full project structures (file trees, architecture diagrams).\n• Design database schemas with relationships and indexes.\n• Write README files, documentation, and contributing guides.\n• Plan sprint structures and user stories.\n\n**API Integration:**\n• Generate fetch/axios code for any REST API with proper error handling.\n• Create TypeScript types from API documentation or sample responses.\n• Build webhook handlers with validation and security.\n• Implement authentication flows (OAuth 2.0, JWT, API keys).\n• Handle pagination, rate limiting, and retry logic.\n\n**Automation Scripts:**\n• Cron jobs for scheduled tasks (data backups, report generation).\n• Data processing pipelines (CSV → Database, API → Spreadsheet).\n• File manipulation scripts (batch rename, format conversion).\n• Deployment configurations (Docker, GitHub Actions, Vercel).\n\n**The Full-Stack ChatGPT Workflow:**\n1. Describe your project idea in detail.\n2. Ask for architecture recommendations.\n3. Generate the folder structure and boilerplate.\n4. Build feature by feature with AI assistance.\n5. Add tests and error handling.\n6. Generate documentation.",
       examplePrompt:
