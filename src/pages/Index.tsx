@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import HeroSection from "@/components/landing/HeroSection";
 import AudienceSection from "@/components/landing/AudienceSection";
+import FeaturedCourseSection from "@/components/landing/FeaturedCourseSection";
 import CategoriesSection from "@/components/landing/CategoriesSection";
 import BenefitsSection from "@/components/landing/BenefitsSection";
 import HowItWorksSection from "@/components/landing/HowItWorksSection";
@@ -31,6 +32,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <AudienceSection />
+        <FeaturedCourseSection />
         <CategoriesSection />
         <BenefitsSection />
         <HowItWorksSection />
