@@ -7,7 +7,7 @@ import { useAppStore } from "@/store/useAppStore";
 import { categories } from "@/data/content";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BookOpen, CheckCircle, Star, Trophy, Award } from "lucide-react";
+import { ArrowRight, BookOpen, CheckCircle, Star, Trophy, Award, BarChart3 } from "lucide-react";
 import { useCertificateStatus } from "@/hooks/useCertificateStatus";
 
 const Dashboard = () => {
@@ -129,6 +129,21 @@ const Dashboard = () => {
                 <ArrowRight className="h-4 w-4 text-primary shrink-0" />
               </Link>
             ) : null}
+
+            {/* Analytics Link */}
+            <Link
+              to="/analytics"
+              className="mt-4 flex items-center gap-3 p-4 rounded-xl bg-secondary/50 border border-border hover:bg-secondary/80 transition-colors"
+            >
+              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                <BarChart3 className="h-5 w-5 text-primary" />
+              </div>
+              <div className="flex-1">
+                <p className="font-medium text-sm">Progress Analytics</p>
+                <p className="text-xs text-muted-foreground">View detailed stats, achievements, and module breakdown</p>
+              </div>
+              <ArrowRight className="h-4 w-4 text-muted-foreground shrink-0" />
+            </Link>
           </motion.div>
 
           {/* Recommended Categories */}

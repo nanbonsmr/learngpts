@@ -19,6 +19,7 @@ import Resources from "./pages/Resources";
 import Onboarding from "./pages/Onboarding";
 import Profile from "./pages/Profile";
 import Certificate from "./pages/Certificate";
+import Analytics from "./pages/Analytics";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -42,6 +43,7 @@ const AppRoutes = () => {
       <Route path="/onboarding" element={<ProtectedRoute><Onboarding /></ProtectedRoute>} />
       <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
       <Route path="/certificate" element={<ProtectedRoute><Certificate /></ProtectedRoute>} />
+      <Route path="/analytics" element={<ProtectedRoute><Analytics /></ProtectedRoute>} />
       <Route path="*" element={<NotFound />} />
       <Route path="*" element={<NotFound />} />
     </Routes>

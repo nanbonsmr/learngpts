@@ -12,6 +12,7 @@ import { ArrowLeft, ArrowRight, CheckCircle, Copy, BookOpen, Lightbulb, MessageS
 import { toast } from "sonner";
 import LessonContentImage from "@/components/lesson/LessonContentImage";
 import LessonAssignment from "@/components/lesson/LessonAssignment";
+import LessonNotes from "@/components/lesson/LessonNotes";
 
 const LessonPage = () => {
   const { categoryId, lessonId } = useParams();
@@ -296,6 +297,9 @@ const LessonPage = () => {
             if (!assignment) return null;
             return <LessonAssignment lessonId={lesson.id} assignment={assignment} />;
           })()}
+
+          {/* Lesson Notes */}
+          <LessonNotes lessonId={lesson.id} />
 
           {/* Actions */}
           <motion.div
