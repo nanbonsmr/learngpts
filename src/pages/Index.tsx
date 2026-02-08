@@ -5,6 +5,7 @@ import AudienceSection from "@/components/landing/AudienceSection";
 import CategoriesSection from "@/components/landing/CategoriesSection";
 import BenefitsSection from "@/components/landing/BenefitsSection";
 import HowItWorksSection from "@/components/landing/HowItWorksSection";
+import FAQSection from "@/components/landing/FAQSection";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
         <CategoriesSection />
         <BenefitsSection />
         <HowItWorksSection />
+        <FAQSection />
       </main>
       <Footer />
     </div>
