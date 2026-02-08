@@ -118,23 +118,104 @@ export const resources = [
   { title: "Perplexity AI", url: "https://perplexity.ai", description: "AI-powered search engine with source citations.", category: "AI Tools" },
   { title: "Midjourney", url: "https://midjourney.com", description: "AI image generation for creative projects.", category: "AI Tools" },
   { title: "Runway ML", url: "https://runwayml.com", description: "AI video generation and editing tools.", category: "AI Tools" },
+  { title: "Microsoft Copilot", url: "https://copilot.microsoft.com", description: "AI assistant integrated with Microsoft 365 and Bing search.", category: "AI Tools" },
+  { title: "Mistral AI", url: "https://chat.mistral.ai", description: "Open-weight AI models with a free chat interface.", category: "AI Tools" },
+  { title: "Poe by Quora", url: "https://poe.com", description: "Access multiple AI models in one place — GPT-4, Claude, Gemini, and more.", category: "AI Tools" },
+  { title: "Hugging Face", url: "https://huggingface.co", description: "Open-source ML models, datasets, and spaces for experimentation.", category: "AI Tools" },
+  { title: "Cohere", url: "https://cohere.com", description: "Enterprise AI with text generation, classification, and embeddings.", category: "AI Tools" },
+
+  // AI Image & Design
+  { title: "DALL·E 3", url: "https://openai.com/dall-e-3", description: "OpenAI's latest image generation model, integrated into ChatGPT.", category: "AI Image & Design" },
+  { title: "Leonardo AI", url: "https://leonardo.ai", description: "High-quality AI art generation with fine-tuned models.", category: "AI Image & Design" },
+  { title: "Ideogram", url: "https://ideogram.ai", description: "AI image generator excelling at text in images.", category: "AI Image & Design" },
+  { title: "Canva AI", url: "https://canva.com/ai-image-generator", description: "AI image generation built into Canva's design platform.", category: "AI Image & Design" },
+  { title: "Adobe Firefly", url: "https://firefly.adobe.com", description: "Adobe's generative AI tools for creative professionals.", category: "AI Image & Design" },
+  { title: "Stable Diffusion", url: "https://stability.ai", description: "Open-source image generation model you can run locally.", category: "AI Image & Design" },
+  { title: "Remove.bg", url: "https://remove.bg", description: "AI-powered background removal for images.", category: "AI Image & Design" },
+  { title: "Clipdrop", url: "https://clipdrop.co", description: "Suite of AI visual tools — cleanup, relight, upscale, and more.", category: "AI Image & Design" },
+
+  // AI Writing & Content
+  { title: "Jasper AI", url: "https://jasper.ai", description: "AI writing assistant for marketing teams and content creators.", category: "AI Writing & Content" },
+  { title: "Copy.ai", url: "https://copy.ai", description: "AI copywriting tool for sales, marketing, and social content.", category: "AI Writing & Content" },
+  { title: "Writesonic", url: "https://writesonic.com", description: "AI writer for blogs, ads, emails, and website copy.", category: "AI Writing & Content" },
+  { title: "Grammarly", url: "https://grammarly.com", description: "AI writing assistant for grammar, clarity, and tone improvements.", category: "AI Writing & Content" },
+  { title: "Hemingway Editor", url: "https://hemingwayapp.com", description: "Makes your writing bold and clear by highlighting complex sentences.", category: "AI Writing & Content" },
+  { title: "Quillbot", url: "https://quillbot.com", description: "AI paraphrasing tool to rephrase text in different styles.", category: "AI Writing & Content" },
+  { title: "Notion AI", url: "https://notion.so/product/ai", description: "AI writing and summarization built into Notion workspace.", category: "AI Writing & Content" },
+  { title: "Rytr", url: "https://rytr.me", description: "Affordable AI writing assistant with 40+ use case templates.", category: "AI Writing & Content" },
+
+  // AI Coding
+  { title: "GitHub Copilot", url: "https://github.com/features/copilot", description: "AI pair programmer that suggests code in your editor.", category: "AI Coding" },
+  { title: "Cursor", url: "https://cursor.sh", description: "AI-first code editor built for pair programming with AI.", category: "AI Coding" },
+  { title: "Replit AI", url: "https://replit.com/ai", description: "AI coding assistant integrated into a cloud IDE.", category: "AI Coding" },
+  { title: "Codeium", url: "https://codeium.com", description: "Free AI code completion for 70+ languages.", category: "AI Coding" },
+  { title: "Tabnine", url: "https://tabnine.com", description: "AI code assistant that runs locally for privacy-first teams.", category: "AI Coding" },
+  { title: "v0 by Vercel", url: "https://v0.dev", description: "AI-powered UI component generator using text prompts.", category: "AI Coding" },
+  { title: "Lovable", url: "https://lovable.dev", description: "Build full-stack web apps from natural language descriptions.", category: "AI Coding" },
+  { title: "Bolt.new", url: "https://bolt.new", description: "AI-powered full-stack app builder in the browser.", category: "AI Coding" },
+
+  // AI Productivity & Automation
+  { title: "Zapier AI", url: "https://zapier.com/ai", description: "Automate workflows between 6,000+ apps with AI assistance.", category: "AI Productivity" },
+  { title: "Make (Integromat)", url: "https://make.com", description: "Visual automation platform for complex multi-step workflows.", category: "AI Productivity" },
+  { title: "Otter.ai", url: "https://otter.ai", description: "AI meeting transcription, notes, and action items.", category: "AI Productivity" },
+  { title: "Fireflies.ai", url: "https://fireflies.ai", description: "AI notetaker that transcribes and summarizes meetings.", category: "AI Productivity" },
+  { title: "Reclaim AI", url: "https://reclaim.ai", description: "AI calendar management for smart scheduling and time blocking.", category: "AI Productivity" },
+  { title: "Mem.ai", url: "https://mem.ai", description: "AI-powered note-taking that organizes itself.", category: "AI Productivity" },
+  { title: "Taskade", url: "https://taskade.com", description: "AI-powered project management with task generation and workflows.", category: "AI Productivity" },
+  { title: "Bardeen", url: "https://bardeen.ai", description: "AI automation for repetitive browser tasks — scrape, enrich, and automate.", category: "AI Productivity" },
+  { title: "SciSpace", url: "https://typeset.io", description: "AI-powered research paper reader, explainer, and summarizer.", category: "AI Productivity" },
+
+  // AI Video & Audio
+  { title: "ElevenLabs", url: "https://elevenlabs.io", description: "Realistic AI voice generation and text-to-speech.", category: "AI Video & Audio" },
+  { title: "Descript", url: "https://descript.com", description: "AI video and podcast editor — edit media by editing text.", category: "AI Video & Audio" },
+  { title: "Synthesia", url: "https://synthesia.io", description: "Create AI-generated videos with virtual presenters.", category: "AI Video & Audio" },
+  { title: "HeyGen", url: "https://heygen.com", description: "AI video creation with customizable avatars and voices.", category: "AI Video & Audio" },
+  { title: "Opus Clip", url: "https://opus.pro", description: "AI tool to repurpose long videos into viral short clips.", category: "AI Video & Audio" },
+  { title: "Suno AI", url: "https://suno.com", description: "AI music generation — create full songs from text descriptions.", category: "AI Video & Audio" },
+  { title: "Whisper by OpenAI", url: "https://openai.com/research/whisper", description: "Open-source speech-to-text model supporting 99 languages.", category: "AI Video & Audio" },
+
   // Extensions
   { title: "AIPRM for ChatGPT", url: "https://aiprm.com", description: "Chrome extension with curated prompt templates.", category: "Extensions" },
   { title: "WebChatGPT", url: "https://tools.zmo.ai/webchatgpt", description: "Add web results to ChatGPT responses.", category: "Extensions" },
   { title: "ChatGPT Writer", url: "https://chatgptwriter.ai", description: "Generate emails and messages directly in your browser.", category: "Extensions" },
   { title: "Merlin AI", url: "https://getmerlin.in", description: "Access AI on any website with a keyboard shortcut.", category: "Extensions" },
+  { title: "MaxAI", url: "https://maxai.me", description: "Use ChatGPT, Claude, and Gemini on any webpage with one click.", category: "Extensions" },
+  { title: "Monica AI", url: "https://monica.im", description: "AI assistant browser extension for chat, search, and writing.", category: "Extensions" },
+  { title: "Wiseone", url: "https://wiseone.io", description: "AI reading assistant that explains, summarizes, and fact-checks articles.", category: "Extensions" },
+  { title: "Glasp", url: "https://glasp.co", description: "Social web highlighter with AI summarization of saved content.", category: "Extensions" },
+
+  // Learning & Courses
+  { title: "OpenAI Cookbook", url: "https://cookbook.openai.com", description: "Official code examples and guides for using OpenAI APIs.", category: "Learning" },
+  { title: "Prompt Engineering Guide", url: "https://promptingguide.ai", description: "Comprehensive guide to prompt engineering techniques and research.", category: "Learning" },
+  { title: "DeepLearning.AI Short Courses", url: "https://deeplearning.ai/short-courses", description: "Free short courses on AI, prompting, and LLMs by Andrew Ng.", category: "Learning" },
+  { title: "Learn Prompting", url: "https://learnprompting.org", description: "Free open-source course on prompt engineering for everyone.", category: "Learning" },
+  { title: "Google AI Essentials", url: "https://grow.google/ai-essentials", description: "Google's free course on AI fundamentals and practical applications.", category: "Learning" },
+  { title: "Anthropic Prompt Library", url: "https://docs.anthropic.com/en/prompt-library", description: "Official prompt examples and best practices from Anthropic.", category: "Learning" },
+  { title: "Microsoft AI Skills", url: "https://learn.microsoft.com/en-us/ai", description: "Free AI learning paths from Microsoft covering Copilot and Azure AI.", category: "Learning" },
+  { title: "Kaggle", url: "https://kaggle.com", description: "ML competitions, datasets, and free courses for data science.", category: "Learning" },
+
+  // AI Search & Research
+  { title: "Consensus AI", url: "https://consensus.app", description: "AI-powered academic search engine backed by peer-reviewed papers.", category: "AI Research" },
+  { title: "Elicit", url: "https://elicit.com", description: "AI research assistant that finds and summarizes academic papers.", category: "AI Research" },
+  { title: "Semantic Scholar", url: "https://semanticscholar.org", description: "AI-powered search engine for academic literature by Allen AI.", category: "AI Research" },
+  { title: "Connected Papers", url: "https://connectedpapers.com", description: "Visual tool to explore academic papers and find related work.", category: "AI Research" },
+  { title: "Scite.ai", url: "https://scite.ai", description: "See how a research paper has been cited — supported or contrasted.", category: "AI Research" },
+  { title: "You.com", url: "https://you.com", description: "AI search engine with conversational results and source citations.", category: "AI Research" },
+
   // Workflows
   { title: "Morning Routine + ChatGPT", url: "#", description: "Use ChatGPT to plan and optimize your perfect morning routine.", category: "Workflows" },
   { title: "Content Repurposing Pipeline", url: "#", description: "Blog → Social → Email → Video — automate your content pipeline.", category: "Workflows" },
   { title: "Client Onboarding Flow", url: "#", description: "Streamline client onboarding with ChatGPT-powered templates and checklists.", category: "Workflows" },
   { title: "Meeting → Action Items", url: "#", description: "Turn messy meeting notes into structured summaries and follow-up emails.", category: "Workflows" },
   { title: "Research → Report", url: "#", description: "Go from raw research to polished executive report in minutes.", category: "Workflows" },
+
   // Tips
   { title: "Be Specific", url: "#", description: "The more specific your prompt, the better the result. Include context, format, and constraints.", category: "Tips" },
   { title: "Use the C-R-T-F-C Framework", url: "#", description: "Context + Role + Task + Format + Constraints = perfect prompts every time.", category: "Tips" },
   { title: "Iterate, Don't Settle", url: "#", description: "Refine responses with follow-ups: 'make it shorter', 'add examples', 'change tone'.", category: "Tips" },
   { title: "Chain Your Prompts", url: "#", description: "Break complex tasks into numbered steps for thorough, accurate results.", category: "Tips" },
   { title: "Use Few-Shot Learning", url: "#", description: "Provide examples of the output you want, then ask for more in the same style.", category: "Tips" },
+
   // Case Studies
   { title: "Freelancer: 10x Proposals", url: "#", description: "How a freelance designer used ChatGPT to write proposals 10x faster with a 40% higher win rate.", category: "Case Studies" },
   { title: "Student: Exam Prep in Half the Time", url: "#", description: "A college student used AI study plans and flashcards to cut study time in half while improving grades.", category: "Case Studies" },
