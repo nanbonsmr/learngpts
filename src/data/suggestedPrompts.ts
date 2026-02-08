@@ -130,4 +130,20 @@ export const lessonSuggestedPrompts: Record<string, SuggestedPrompt[]> = {
     { title: "Prompt Optimization Lab", prompt: "I have this prompt: [paste]. Run it through a 5-step optimization process: 1) Identify weaknesses, 2) Apply C-R-T-F-C framework, 3) Add chain-of-thought reasoning, 4) Include few-shot examples, 5) Add self-evaluation criteria. Show before/after." },
     { title: "Enterprise Prompt Library", prompt: "Build a 20-prompt enterprise library for a [industry] company. Categories: customer service, internal ops, content, data analysis, and strategy. Each prompt: title, template with placeholders, example filled-in, and expected output format." },
   ],
+  // Module 8: Website Building
+  "8-1-planning": [
+    { title: "Website Sitemap Generator", prompt: "I'm building a website for [business type] targeting [audience]. Generate a complete sitemap with page names, purpose of each page, and the key content each page needs. Include SEO-optimized URL slugs." },
+    { title: "Full Page Copywriter", prompt: "Write complete website copy for my [page name] page. Business: [name], Industry: [industry], Target audience: [audience]. Include: H1 headline, H2 subheadline, 3 body sections with headings, 2 CTAs, and meta description." },
+    { title: "Brand Voice Builder", prompt: "Define a complete brand voice for [business name] in [industry]. Include: tone adjectives (3), vocabulary do's and don'ts, sentence structure rules, 5 example sentences in the brand voice, and guidelines for different platforms (website, social, email)." },
+  ],
+  "8-2-lovable-ai": [
+    { title: "Lovable Prompt Crafter", prompt: "I want to build a [type] website with Lovable AI. Business: [name]. Pages needed: [list]. Style: [describe]. Write a detailed, structured prompt I can paste into Lovable to generate the best possible site." },
+    { title: "Design Direction Guide", prompt: "Help me choose a design direction for my [type] website. Suggest: color palette (hex codes), font pairing, layout style, and 3 reference websites with similar aesthetics. Target audience: [audience]. Mood: [describe desired feeling]." },
+    { title: "Feature Request Prompts", prompt: "I've built a basic website with Lovable AI. Now I want to add these features: [list features]. Write individual Lovable chat prompts for each feature, ordered from simplest to most complex." },
+  ],
+  "8-3-deploy-optimize": [
+    { title: "SEO Audit Checklist", prompt: "Create a complete SEO audit checklist for my [type] website at [URL]. Cover: technical SEO (15 items), on-page SEO (10 items), content SEO (10 items), and local SEO (5 items). For each item, explain why it matters and how to fix it." },
+    { title: "Blog Post Generator", prompt: "Write a 1,500-word SEO-optimized blog post for my [niche] website. Target keyword: [keyword]. Include: compelling title, meta description, intro with hook, 5 H2 sections, practical examples, internal link suggestions, and a CTA." },
+    { title: "Growth Strategy Plan", prompt: "Create a 90-day growth plan for my newly launched [type] website. Include weekly tasks across: SEO, content marketing, social media, email list building, and analytics. Set specific KPI targets for each month." },
+  ],
 };
