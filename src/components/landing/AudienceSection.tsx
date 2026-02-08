@@ -28,7 +28,7 @@ const AudienceSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
           {audiences.map((item, i) => (
             <motion.div
               key={item.label}
@@ -36,9 +36,9 @@ const AudienceSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="glass-card rounded-2xl p-6 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-default"
+              className="glass-card rounded-2xl p-4 sm:p-6 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-default"
             >
-              <div className="h-12 w-12 rounded-xl gradient-primary flex items-center justify-center mx-auto mb-4">
+              <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl gradient-primary flex items-center justify-center mx-auto mb-3 sm:mb-4">
                 <item.icon className="h-6 w-6 text-primary-foreground" />
               </div>
               <h3 className="font-display font-semibold text-sm mb-1">{item.label}</h3>
