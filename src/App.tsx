@@ -18,6 +18,7 @@ import PromptLibrary from "./pages/PromptLibrary";
 import Resources from "./pages/Resources";
 import Onboarding from "./pages/Onboarding";
 import Profile from "./pages/Profile";
+import Certificate from "./pages/Certificate";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +41,8 @@ const AppRoutes = () => {
       <Route path="/resources" element={<ProtectedRoute><Resources /></ProtectedRoute>} />
       <Route path="/onboarding" element={<ProtectedRoute><Onboarding /></ProtectedRoute>} />
       <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+      <Route path="/certificate" element={<ProtectedRoute><Certificate /></ProtectedRoute>} />
+      <Route path="*" element={<NotFound />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
     </>

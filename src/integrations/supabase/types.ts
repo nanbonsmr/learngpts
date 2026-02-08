@@ -14,6 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
+      certificates: {
+        Row: {
+          certificate_name: string | null
+          created_at: string
+          id: string
+          issued_at: string | null
+          payment_id: string | null
+          payment_status: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          certificate_name?: string | null
+          created_at?: string
+          id?: string
+          issued_at?: string | null
+          payment_id?: string | null
+          payment_status?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          certificate_name?: string | null
+          created_at?: string
+          id?: string
+          issued_at?: string | null
+          payment_id?: string | null
+          payment_status?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string
