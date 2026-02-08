@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { useAppStore } from "@/store/useAppStore";
 import { categories } from "@/data/content";
 import { Progress } from "@/components/ui/progress";
@@ -41,6 +42,7 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title="Dashboard" description="Track your ChatGPT learning progress, continue lessons, and access your personalized study plan." />
       <Navbar />
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4">

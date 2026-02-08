@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { promptLibrary } from "@/data/content";
 import { useAppStore } from "@/store/useAppStore";
 import { Button } from "@/components/ui/button";
@@ -32,6 +33,11 @@ const PromptLibrary = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Prompt Library"
+        description="Browse 60+ ready-to-use ChatGPT prompts for business, coding, marketing, freelancing, and productivity. Copy and paste instantly."
+        canonical="/prompts"
+      />
       <Navbar />
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4">
