@@ -71,6 +71,39 @@ export type Database = {
         }
         Relationships: []
       }
+      user_assignments: {
+        Row: {
+          checklist_completed: string[]
+          completed: boolean
+          created_at: string
+          id: string
+          lesson_id: string
+          submission_text: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          checklist_completed?: string[]
+          completed?: boolean
+          created_at?: string
+          id?: string
+          lesson_id: string
+          submission_text?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          checklist_completed?: string[]
+          completed?: boolean
+          created_at?: string
+          id?: string
+          lesson_id?: string
+          submission_text?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       user_progress: {
         Row: {
           completed_lessons: string[]

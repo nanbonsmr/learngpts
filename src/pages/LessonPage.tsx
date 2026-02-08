@@ -5,11 +5,13 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { categories } from "@/data/content";
 import { lessonSuggestedPrompts } from "@/data/suggestedPrompts";
+import { lessonAssignments } from "@/data/assignments";
 import { useAppStore } from "@/store/useAppStore";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, CheckCircle, Copy, BookOpen, Lightbulb, MessageSquare, BarChart3, FileText, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 import LessonContentImage from "@/components/lesson/LessonContentImage";
+import LessonAssignment from "@/components/lesson/LessonAssignment";
 
 const LessonPage = () => {
   const { categoryId, lessonId } = useParams();
@@ -279,7 +281,7 @@ const LessonPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="glass-card rounded-2xl p-6 md:p-8 mb-8 border-2 border-primary/20"
+            className="glass-card rounded-2xl p-6 md:p-8 mb-6 border-2 border-primary/20"
           >
             <div className="flex items-center gap-2 mb-4">
               <span className="text-xl">🎯</span>
@@ -287,6 +289,13 @@ const LessonPage = () => {
             </div>
             <p className="text-muted-foreground leading-relaxed">{lesson.practiceTask}</p>
           </motion.div>
+
+          {/* Assignment */}
+          {(() => {
+            const assignment = lesson.assignment || lessonAssignments[lesson.id];
+            if (!assignment) return null;
+            return <LessonAssignment lessonId={lesson.id} assignment={assignment} />;
+          })()}
 
           {/* Actions */}
           <motion.div
