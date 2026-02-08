@@ -39,25 +39,40 @@ const CategoryDetail = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="glass-card rounded-2xl p-6 md:p-8 mb-8"
+            className="glass-card rounded-2xl overflow-hidden mb-8"
           >
-            <div className="flex items-center gap-4 mb-4">
-              <div
-                className="h-14 w-14 rounded-xl flex items-center justify-center"
-                style={{ background: `${category.color}20` }}
-              >
-                <category.icon className="h-7 w-7" style={{ color: category.color }} />
-              </div>
-              <div>
-                <h1 className="font-display text-2xl md:text-3xl font-bold">{category.title}</h1>
-                <p className="text-muted-foreground text-sm">{category.description}</p>
-              </div>
+            <div className="h-48 md:h-56 overflow-hidden">
+              <img
+                src={category.image}
+                alt={category.title}
+                className="w-full h-full object-cover"
+              />
             </div>
-            <div className="flex items-center gap-4 mt-4">
-              <Progress value={progress} className="h-3 flex-1" />
-              <span className="text-sm font-semibold text-primary">{progress}%</span>
+            <div className="p-6 md:p-8">
+              <div className="flex items-center gap-4 mb-4">
+                <div
+                  className="h-14 w-14 rounded-xl flex items-center justify-center shrink-0"
+                  style={{ background: `${category.color}20` }}
+                >
+                  <category.icon className="h-7 w-7" style={{ color: category.color }} />
+                </div>
+                <div>
+                  <h1 className="font-display text-2xl md:text-3xl font-bold">{category.title}</h1>
+                  <div className="flex items-center gap-2 mt-1">
+                    <p className="text-muted-foreground text-sm">{category.description}</p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-medium">{category.level}</span>
+                <span className="text-xs text-muted-foreground">{category.lessons.length} lessons</span>
+              </div>
+              <div className="flex items-center gap-4 mt-4">
+                <Progress value={progress} className="h-3 flex-1" />
+                <span className="text-sm font-semibold text-primary">{progress}%</span>
+              </div>
+              <p className="text-xs text-muted-foreground mt-2">{completed} of {category.lessons.length} lessons completed</p>
             </div>
-            <p className="text-xs text-muted-foreground mt-2">{completed} of {category.lessons.length} lessons completed</p>
           </motion.div>
 
           <div className="space-y-3">
