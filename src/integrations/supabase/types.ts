@@ -38,6 +38,45 @@ export type Database = {
         }
         Relationships: []
       }
+      user_progress: {
+        Row: {
+          completed_lessons: string[]
+          completed_quizzes: string[]
+          created_at: string
+          favorite_prompts: string[]
+          goal: string | null
+          id: string
+          level: string | null
+          onboarding_complete: boolean
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          completed_lessons?: string[]
+          completed_quizzes?: string[]
+          created_at?: string
+          favorite_prompts?: string[]
+          goal?: string | null
+          id?: string
+          level?: string | null
+          onboarding_complete?: boolean
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          completed_lessons?: string[]
+          completed_quizzes?: string[]
+          created_at?: string
+          favorite_prompts?: string[]
+          goal?: string | null
+          id?: string
+          level?: string | null
+          onboarding_complete?: boolean
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
