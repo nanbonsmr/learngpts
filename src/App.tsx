@@ -11,6 +11,7 @@ import Dashboard from "./pages/Dashboard";
 import Categories from "./pages/Categories";
 import CategoryDetail from "./pages/CategoryDetail";
 import LessonPage from "./pages/LessonPage";
+import QuizPage from "./pages/QuizPage";
 import PromptLibrary from "./pages/PromptLibrary";
 import Resources from "./pages/Resources";
 import Onboarding from "./pages/Onboarding";
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/categories" element={<ProtectedRoute><Categories /></ProtectedRoute>} />
             <Route path="/category/:categoryId" element={<ProtectedRoute><CategoryDetail /></ProtectedRoute>} />
             <Route path="/lesson/:categoryId/:lessonId" element={<ProtectedRoute><LessonPage /></ProtectedRoute>} />
+            <Route path="/quiz/:categoryId" element={<ProtectedRoute><QuizPage /></ProtectedRoute>} />
             <Route path="/prompts" element={<ProtectedRoute><PromptLibrary /></ProtectedRoute>} />
             <Route path="/resources" element={<ProtectedRoute><Resources /></ProtectedRoute>} />
             <Route path="/onboarding" element={<ProtectedRoute><Onboarding /></ProtectedRoute>} />
