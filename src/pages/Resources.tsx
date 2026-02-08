@@ -14,7 +14,7 @@ const allResourceCategories = ["All", "Saved", ...Array.from(new Set(resources.m
 const Resources = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
-  const savedResources = useAppStore((s) => s.user.savedResources);
+  const savedResources = useAppStore((s) => s.user.savedResources ?? []);
   const toggleSavedResource = useAppStore((s) => s.toggleSavedResource);
 
   const filtered = useMemo(() => {
