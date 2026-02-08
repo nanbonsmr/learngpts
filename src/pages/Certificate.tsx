@@ -27,7 +27,6 @@ const Certificate = () => {
   const [certificate, setCertificate] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [purchasing, setPurchasing] = useState(false);
-  const [productId, setProductId] = useState("");
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const totalLessons = categories.reduce((a, c) => a + c.lessons.length, 0);
@@ -68,11 +67,8 @@ const Certificate = () => {
   }, [authUser?.id, searchParams]);
 
   const handlePurchase = async () => {
-    if (!productId.trim()) {
-      toast({ title: "Product ID required", description: "Please enter your Dodo Payments product ID.", variant: "destructive" });
-      return;
-    }
     setPurchasing(true);
+    const productId = "pdt_0NY3ATlIQq5eaVBq1BEMd";
     try {
       const { data, error } = await supabase.functions.invoke("create-dodo-checkout", {
         body: {
@@ -334,13 +330,8 @@ const Certificate = () => {
 
               {allCompleted ? (
                 <div className="space-y-4 max-w-sm mx-auto">
-                  <input
-                    type="text"
-                    placeholder="Enter Dodo Payments Product ID"
-                    value={productId}
-                    onChange={(e) => setProductId(e.target.value)}
-                    className="w-full px-4 py-2 rounded-lg border border-border bg-secondary/50 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary text-sm"
-                  />
+                  <div className="text-3xl font-display font-bold gradient-text mb-2">$5.00</div>
+                  <p className="text-sm text-muted-foreground mb-2">One-time payment • Lifetime access</p>
                   <Button
                     onClick={handlePurchase}
                     disabled={purchasing}
@@ -352,7 +343,7 @@ const Certificate = () => {
                       </>
                     ) : (
                       <>
-                        Purchase Certificate <ArrowRight className="ml-2 h-5 w-5" />
+                        Purchase Certificate — $5 <ArrowRight className="ml-2 h-5 w-5" />
                       </>
                     )}
                   </Button>
