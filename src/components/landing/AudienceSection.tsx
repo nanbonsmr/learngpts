@@ -31,7 +31,7 @@ const AudienceSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-5">
+        <div className="grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-5">
           {audiences.map((item, i) => (
             <motion.div
               key={item.label}
@@ -39,7 +39,7 @@ const AudienceSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08, duration: 0.5 }}
-              className="group glass-card rounded-2xl p-5 sm:p-6 text-center hover:shadow-lg hover:-translate-y-1.5 transition-all duration-300 cursor-default"
+              className="group glass-card rounded-2xl p-4 sm:p-6 text-center hover:shadow-lg hover:-translate-y-1.5 transition-all duration-300 cursor-default"
             >
               <div className={`h-12 w-12 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
                 <item.icon className="h-6 w-6 text-foreground" />

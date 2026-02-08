@@ -58,7 +58,7 @@ const FeaturedCourseSection = () => {
               </div>
 
               {/* Content side */}
-              <div className="p-8 md:p-10 flex flex-col justify-center">
+              <div className="p-5 sm:p-8 md:p-10 flex flex-col justify-center">
                 <h3 className="font-display text-2xl md:text-3xl font-bold mb-4 group-hover:text-[hsl(190,80%,45%)] transition-colors duration-300">
                   Build a Website with ChatGPT & Lovable
                 </h3>
@@ -88,7 +88,7 @@ const FeaturedCourseSection = () => {
                 </div>
 
                 {/* Stats row */}
-                <div className="flex items-center gap-5 mb-6">
+                <div className="flex flex-wrap items-center gap-3 sm:gap-5 mb-6">
                   <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
                     <BookOpen className="h-4 w-4" />
                     <span>3 lessons</span>

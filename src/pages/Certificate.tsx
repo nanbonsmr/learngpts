@@ -228,7 +228,7 @@ const Certificate = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main className="pt-24 pb-16">
-        <div className="container mx-auto px-4 max-w-3xl">
+        <div className="container mx-auto px-3 sm:px-4 max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -285,12 +285,12 @@ const Certificate = () => {
               transition={{ delay: 0.2 }}
             >
               <div className="glass-card rounded-2xl p-6 mb-6">
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4">
                   <h3 className="font-display font-semibold flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-accent" />
                     Certificate Issued
                   </h3>
-                  <Button onClick={downloadCertificate} className="gradient-primary border-0">
+                  <Button onClick={downloadCertificate} className="gradient-primary border-0 w-full sm:w-auto">
                     <Download className="mr-2 h-4 w-4" /> Download
                   </Button>
                 </div>

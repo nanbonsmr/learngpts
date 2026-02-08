@@ -105,7 +105,7 @@ const ContactSection = () => {
           <Button
             size="lg"
             asChild
-            className="gradient-primary border-0 text-lg px-10 h-14 rounded-2xl shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 hover:scale-[1.02] transition-all duration-300"
+            className="gradient-primary border-0 text-base sm:text-lg px-8 sm:px-10 h-12 sm:h-14 rounded-2xl shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 hover:scale-[1.02] transition-all duration-300 w-full sm:w-auto"
           >
             <Link to="/auth?signup=true">
               Get Started Free

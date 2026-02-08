@@ -195,7 +195,7 @@ const Profile = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 xs:grid-cols-3 gap-3 sm:gap-4">
                   <div className="rounded-xl border border-border p-4 text-center">
                     <p className="text-2xl font-display font-bold gradient-text">
                       {totalCompleted}
