@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, LogOut } from "lucide-react";
 import { useState } from "react";
+import { useAuth } from "@/hooks/useAuth";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { user, signOut } = useAuth();
+
+  const handleSignOut = async () => {
+    await signOut();
+    setMobileOpen(false);
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-card">
@@ -25,12 +32,26 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <Button variant="ghost" asChild>
-            <Link to="/auth">Log In</Link>
-          </Button>
-          <Button asChild className="gradient-primary border-0">
-            <Link to="/auth?signup=true">Sign Up Free</Link>
-          </Button>
+          {user ? (
+            <>
+              <span className="text-sm text-muted-foreground truncate max-w-[160px]">
+                {user.email}
+              </span>
+              <Button variant="ghost" size="sm" onClick={handleSignOut}>
+                <LogOut className="h-4 w-4 mr-1" />
+                Log Out
+              </Button>
+            </>
+          ) : (
+            <>
+              <Button variant="ghost" asChild>
+                <Link to="/auth">Log In</Link>
+              </Button>
+              <Button asChild className="gradient-primary border-0">
+                <Link to="/auth?signup=true">Sign Up Free</Link>
+              </Button>
+            </>
+          )}
         </div>
 
         {/* Mobile toggle */}
@@ -47,12 +68,21 @@ const Navbar = () => {
           <Link to="/prompts" className="block text-sm py-2 text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>Prompt Library</Link>
           <Link to="/resources" className="block text-sm py-2 text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>Resources</Link>
           <div className="flex gap-2 pt-2">
-            <Button variant="outline" asChild className="flex-1">
-              <Link to="/auth" onClick={() => setMobileOpen(false)}>Log In</Link>
-            </Button>
-            <Button asChild className="flex-1 gradient-primary border-0">
-              <Link to="/auth?signup=true" onClick={() => setMobileOpen(false)}>Sign Up</Link>
-            </Button>
+            {user ? (
+              <Button variant="outline" className="flex-1" onClick={handleSignOut}>
+                <LogOut className="h-4 w-4 mr-1" />
+                Log Out
+              </Button>
+            ) : (
+              <>
+                <Button variant="outline" asChild className="flex-1">
+                  <Link to="/auth" onClick={() => setMobileOpen(false)}>Log In</Link>
+                </Button>
+                <Button asChild className="flex-1 gradient-primary border-0">
+                  <Link to="/auth?signup=true" onClick={() => setMobileOpen(false)}>Sign Up</Link>
+                </Button>
+              </>
+            )}
           </div>
         </div>
       )}
