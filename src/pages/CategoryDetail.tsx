@@ -1,0 +1,113 @@
+import { useParams, Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { categories } from "@/data/content";
+import { useAppStore } from "@/store/useAppStore";
+import { Progress } from "@/components/ui/progress";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, ArrowRight, CheckCircle, Clock } from "lucide-react";
+
+const CategoryDetail = () => {
+  const { categoryId } = useParams();
+  const { user } = useAppStore();
+  const category = categories.find((c) => c.id === categoryId);
+
+  if (!category) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="font-display text-2xl font-bold mb-4">Category not found</h1>
+          <Button asChild><Link to="/categories">Back to Categories</Link></Button>
+        </div>
+      </div>
+    );
+  }
+
+  const completed = category.lessons.filter((l) => user.completedLessons.includes(l.id)).length;
+  const progress = category.lessons.length > 0 ? Math.round((completed / category.lessons.length) * 100) : 0;
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main className="pt-24 pb-16">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <Button variant="ghost" asChild className="mb-6">
+            <Link to="/categories"><ArrowLeft className="mr-2 h-4 w-4" /> Back to Categories</Link>
+          </Button>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="glass-card rounded-2xl p-6 md:p-8 mb-8"
+          >
+            <div className="flex items-center gap-4 mb-4">
+              <div
+                className="h-14 w-14 rounded-xl flex items-center justify-center"
+                style={{ background: `${category.color}20` }}
+              >
+                <category.icon className="h-7 w-7" style={{ color: category.color }} />
+              </div>
+              <div>
+                <h1 className="font-display text-2xl md:text-3xl font-bold">{category.title}</h1>
+                <p className="text-muted-foreground text-sm">{category.description}</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 mt-4">
+              <Progress value={progress} className="h-3 flex-1" />
+              <span className="text-sm font-semibold text-primary">{progress}%</span>
+            </div>
+            <p className="text-xs text-muted-foreground mt-2">{completed} of {category.lessons.length} lessons completed</p>
+          </motion.div>
+
+          <div className="space-y-3">
+            {category.lessons.map((lesson, i) => {
+              const isCompleted = user.completedLessons.includes(lesson.id);
+              return (
+                <motion.div
+                  key={lesson.id}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                >
+                  <Link
+                    to={`/lesson/${category.id}/${lesson.id}`}
+                    className={`group flex items-center gap-4 p-5 rounded-xl border transition-all duration-200 ${
+                      isCompleted
+                        ? "border-accent/30 bg-accent/5 hover:bg-accent/10"
+                        : "border-border hover:border-primary/30 hover:bg-secondary/50 hover:shadow-md"
+                    }`}
+                  >
+                    <div className={`h-10 w-10 rounded-xl flex items-center justify-center shrink-0 ${
+                      isCompleted ? "bg-accent/20" : "bg-secondary"
+                    }`}>
+                      {isCompleted ? (
+                        <CheckCircle className="h-5 w-5 text-accent" />
+                      ) : (
+                        <span className="text-sm font-semibold text-muted-foreground">{i + 1}</span>
+                      )}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-medium text-sm group-hover:text-primary transition-colors">{lesson.title}</h3>
+                      <p className="text-xs text-muted-foreground line-clamp-1 mt-0.5">{lesson.description}</p>
+                    </div>
+                    <div className="flex items-center gap-3 shrink-0">
+                      <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                        <Clock className="h-3 w-3" />
+                        {lesson.duration}
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                    </div>
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default CategoryDetail;
