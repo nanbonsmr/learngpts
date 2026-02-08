@@ -52,7 +52,7 @@ const Dashboard = () => {
             animate={{ opacity: 1, y: 0 }}
             className="mb-8"
           >
-            <h1 className="font-display text-3xl md:text-4xl font-bold mb-2">
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
               Welcome back! 👋
             </h1>
             <p className="text-muted-foreground">
@@ -67,7 +67,7 @@ const Dashboard = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="glass-card rounded-2xl p-6 md:p-8 mb-8"
+            className="glass-card rounded-2xl p-4 sm:p-6 md:p-8 mb-8"
           >
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
               <div>

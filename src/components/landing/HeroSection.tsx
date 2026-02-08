@@ -6,7 +6,7 @@ import logo from "@/assets/logo.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-16">
+    <section className="relative min-h-[80vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 sm:pt-16">
       {/* Ambient background */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Main gradient orbs */}
@@ -46,7 +46,7 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Heading */}
-          <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6 text-balance leading-[1.1]">
+          <h1 className="font-display text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6 text-balance leading-[1.1]">
             Master ChatGPT{" "}
             <br className="hidden sm:block" />
             <span className="gradient-text">the Smart Way</span>
@@ -73,7 +73,7 @@ const HeroSection = () => {
             <Button
               size="lg"
               asChild
-              className="gradient-primary border-0 text-lg px-8 h-14 rounded-2xl shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 hover:scale-[1.02] transition-all duration-300"
+              className="gradient-primary border-0 text-base sm:text-lg px-6 sm:px-8 h-12 sm:h-14 rounded-2xl shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 hover:scale-[1.02] transition-all duration-300 w-full sm:w-auto"
             >
               <Link to="/auth?signup=true">
                 Get Started Free
@@ -84,7 +84,7 @@ const HeroSection = () => {
               size="lg"
               variant="outline"
               asChild
-              className="text-lg px-8 h-14 rounded-2xl border-border/60 hover:bg-muted/50 transition-all duration-300"
+              className="text-base sm:text-lg px-6 sm:px-8 h-12 sm:h-14 rounded-2xl border-border/60 hover:bg-muted/50 transition-all duration-300 w-full sm:w-auto"
             >
               <Link to="/categories">
                 <Play className="mr-2 h-4 w-4" />

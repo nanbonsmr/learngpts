@@ -60,7 +60,7 @@ const LessonPage = () => {
       />
       <Navbar />
       <main className="pt-24 pb-16">
-        <div className="container mx-auto px-4 max-w-3xl overflow-hidden">
+        <div className="container mx-auto px-3 sm:px-4 max-w-3xl overflow-hidden">
           <Button variant="ghost" asChild className="mb-6">
             <Link to={`/category/${category.id}`}><ArrowLeft className="mr-2 h-4 w-4" /> {category.title}</Link>
           </Button>
@@ -97,7 +97,7 @@ const LessonPage = () => {
                 </span>
               )}
             </div>
-            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-4">{lesson.title}</h1>
+            <h1 className="font-display text-xl sm:text-2xl md:text-4xl font-bold mb-4 break-words">{lesson.title}</h1>
           </motion.div>
 
           {/* Explanation */}
@@ -198,12 +198,12 @@ const LessonPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="glass-card rounded-2xl p-6 md:p-8 mb-6"
+            className="glass-card rounded-2xl p-4 sm:p-6 md:p-8 mb-6"
           >
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex items-start sm:items-center justify-between gap-2 mb-4">
               <div className="flex items-center gap-2">
-                <MessageSquare className="h-5 w-5 text-primary" />
-                <h2 className="font-display font-semibold text-lg">Example Prompt</h2>
+                <MessageSquare className="h-5 w-5 text-primary shrink-0" />
+                <h2 className="font-display font-semibold text-base sm:text-lg">Example Prompt</h2>
               </div>
               <Button
                 variant="outline"
@@ -215,7 +215,7 @@ const LessonPage = () => {
                 Copy
               </Button>
             </div>
-            <div className="bg-secondary/80 rounded-xl p-4 font-mono text-sm leading-relaxed">
+            <div className="bg-secondary/80 rounded-xl p-3 sm:p-4 font-mono text-xs sm:text-sm leading-relaxed break-words overflow-x-auto">
               {lesson.examplePrompt}
             </div>
           </motion.div>
@@ -306,19 +306,19 @@ const LessonPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="flex flex-col sm:flex-row items-center justify-between gap-4"
+            className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4"
           >
-            <div className="flex gap-3">
+            <div className="flex gap-2 sm:gap-3">
               {prevLesson && (
-                <Button variant="outline" asChild>
+                <Button variant="outline" asChild className="flex-1 sm:flex-initial">
                   <Link to={`/lesson/${category.id}/${prevLesson.id}`}>
-                    <ArrowLeft className="mr-2 h-4 w-4" /> Previous
+                    <ArrowLeft className="mr-1 sm:mr-2 h-4 w-4" /> Previous
                   </Link>
                 </Button>
               )}
             </div>
 
-            <div className="flex gap-3">
+            <div className="flex gap-2 sm:gap-3">
               <Button
                 variant={isCompleted ? "outline" : "default"}
                 onClick={() => {
@@ -330,16 +330,17 @@ const LessonPage = () => {
                     toast.success("Lesson completed! 🎉");
                   }
                 }}
-                className={!isCompleted ? "gradient-primary border-0" : ""}
+                className={`flex-1 sm:flex-initial ${!isCompleted ? "gradient-primary border-0" : ""}`}
               >
-                <CheckCircle className="mr-2 h-4 w-4" />
-                {isCompleted ? "Mark Incomplete" : "Mark as Completed"}
+                <CheckCircle className="mr-1 sm:mr-2 h-4 w-4" />
+                <span className="hidden xs:inline">{isCompleted ? "Mark Incomplete" : "Mark as Completed"}</span>
+                <span className="xs:hidden">{isCompleted ? "Incomplete" : "Completed"}</span>
               </Button>
 
               {nextLesson && (
-                <Button asChild variant="outline">
+                <Button asChild variant="outline" className="flex-1 sm:flex-initial">
                   <Link to={`/lesson/${category.id}/${nextLesson.id}`}>
-                    Next <ArrowRight className="ml-2 h-4 w-4" />
+                    Next <ArrowRight className="ml-1 sm:ml-2 h-4 w-4" />
                   </Link>
                 </Button>
               )}

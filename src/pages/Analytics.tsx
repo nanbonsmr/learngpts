@@ -47,7 +47,7 @@ const Analytics = () => {
           </motion.div>
 
           {/* Summary Cards */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-8">
             {[
               { icon: BookOpen, label: "Lessons Done", value: `${completedLessons}/${totalLessons}`, color: "text-primary" },
               { icon: Trophy, label: "Quizzes Passed", value: `${completedQuizzes}/${totalQuizzes}`, color: "text-accent" },
@@ -59,11 +59,11 @@ const Analytics = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
-                className="glass-card rounded-2xl p-5 text-center"
+                className="glass-card rounded-2xl p-4 sm:p-5 text-center"
               >
-                <stat.icon className={`h-6 w-6 ${stat.color} mx-auto mb-2`} />
-                <p className="font-display text-2xl font-bold">{stat.value}</p>
-                <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
+                <stat.icon className={`h-5 w-5 sm:h-6 sm:w-6 ${stat.color} mx-auto mb-2`} />
+                <p className="font-display text-lg sm:text-2xl font-bold">{stat.value}</p>
+                <p className="text-[10px] sm:text-xs text-muted-foreground mt-1">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -162,7 +162,7 @@ const Analytics = () => {
               <CheckCircle className="h-5 w-5 text-accent" />
               <h2 className="font-display font-semibold text-lg">Achievements</h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-3">
               {[
                 { title: "First Steps", desc: "Complete your first lesson", unlocked: completedLessons >= 1 },
                 { title: "Getting Serious", desc: "Complete 5 lessons", unlocked: completedLessons >= 5 },
