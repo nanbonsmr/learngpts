@@ -2,6 +2,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { categories } from "@/data/content";
 import { lessonSuggestedPrompts } from "@/data/suggestedPrompts";
 import { useAppStore } from "@/store/useAppStore";
@@ -41,6 +42,19 @@ const LessonPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={lesson.title}
+        description={lesson.description.slice(0, 155)}
+        canonical={`/lesson/${category.id}/${lesson.id}`}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: lesson.title,
+          description: lesson.description.slice(0, 155),
+          author: { "@type": "Organization", name: "LearnGPT" },
+          publisher: { "@type": "Organization", name: "LearnGPT" },
+        }}
+      />
       <Navbar />
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-3xl overflow-hidden">

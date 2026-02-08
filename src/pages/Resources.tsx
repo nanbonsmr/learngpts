@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { resources } from "@/data/content";
 import { useAppStore } from "@/store/useAppStore";
 import { Badge } from "@/components/ui/badge";
@@ -51,6 +52,11 @@ const Resources = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Resources"
+        description="Curated collection of tools, guides, and references to boost your ChatGPT skills and AI productivity."
+        canonical="/resources"
+      />
       <Navbar />
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4">

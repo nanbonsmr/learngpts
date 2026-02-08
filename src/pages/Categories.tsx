@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { categories } from "@/data/content";
 import { useAppStore } from "@/store/useAppStore";
 import { Progress } from "@/components/ui/progress";
@@ -12,6 +13,11 @@ const Categories = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Learning Categories"
+        description="Browse 7 practical ChatGPT learning modules covering prompt engineering, business, coding, freelancing, and more."
+        canonical="/categories"
+      />
       <Navbar />
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4">
