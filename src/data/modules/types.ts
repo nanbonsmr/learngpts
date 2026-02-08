@@ -18,6 +18,12 @@ export interface SuggestedPrompt {
   prompt: string;
 }
 
+export interface ContentImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
 export interface Lesson {
   id: string;
   title: string;
@@ -27,6 +33,7 @@ export interface Lesson {
   practiceTask: string;
   duration: string;
   image?: string;
+  contentImages?: ContentImage[];
   suggestedPrompts?: SuggestedPrompt[];
   caseStudy?: CaseStudy;
   realData?: RealData;

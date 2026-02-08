@@ -3,6 +3,7 @@ import module7Image from "@/assets/module-7-advanced.jpg";
 import lesson71Image from "@/assets/lessons/lesson-7-1-custom-gpts.jpg";
 import lesson72Image from "@/assets/lessons/lesson-7-2-automations.jpg";
 import lesson73Image from "@/assets/lessons/lesson-7-3-engineering.jpg";
+import content71CustomGpts from "@/assets/lessons/content/content-7-1-custom-gpts.jpg";
 import type { Category } from "./types";
 
 const module7: Category = {
@@ -18,6 +19,9 @@ const module7: Category = {
       id: "7-1-custom-gpts",
       title: "Lesson 7.1 – Custom GPTs & Personal AI Assistants",
       image: lesson71Image,
+      contentImages: [
+        { src: content71CustomGpts, alt: "Custom GPT automation workflow with connected integrations", caption: "Build specialized AI assistants with custom instructions, knowledge files, and API integrations" },
+      ],
       description:
         "OpenAI allows Plus users to create Custom GPTs — specialized AI assistants tailored to specific tasks. Over 3 million Custom GPTs have been created since the feature launched, demonstrating massive demand for specialized AI.\n\n**What are Custom GPTs?**\nPersonalized versions of ChatGPT with:\n• Custom instructions permanently baked in.\n• Specific knowledge files uploaded (PDFs, docs, spreadsheets — up to 20 files).\n• Defined behavior, personality, and response style.\n• Optional API connections (Actions) for real-time data.\n• Custom conversation starters for guided interactions.\n\n**High-Value Use Cases:**\n• **Marketing assistant** — Knows your brand voice, audience personas, and campaign history.\n• **Writing coach** — Follows your style guide, editorial standards, and tone preferences.\n• **Customer support bot** — Trained on your FAQ, policies, and product catalog.\n• **Code reviewer** — Knows your tech stack, coding standards, and architecture patterns.\n• **Personal tutor** — Adapts to your learning level, preferred analogies, and weak areas.\n• **Sales assistant** — Knows your product, pricing, competitors, and objection responses.\n\n**How to Build One:**\n1. Go to ChatGPT → Explore GPTs → Create.\n2. Name it and write system instructions (personality, knowledge, boundaries).\n3. Upload knowledge files (PDFs, docs, data).\n4. Configure conversation starters.\n5. Optionally add Actions (API calls for live data).\n6. Test thoroughly with edge cases.\n7. Publish (private, shared link, or GPT Store).\n\n**System Prompt Design:**\nThe system prompt is the most important part. It should define:\n• Who the GPT is (role, expertise, personality)\n• What it knows and doesn't know (knowledge boundaries)\n• How it responds (format, tone, length)\n• What it refuses to do (safety boundaries)\n• Escalation procedures (when to hand off to humans)",
       examplePrompt:
