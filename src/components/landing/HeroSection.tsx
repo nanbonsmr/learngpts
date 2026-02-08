@@ -5,12 +5,12 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-16">
+    <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden pt-16">
       {/* Background gradient orbs */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-primary/20 blur-3xl animate-float" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-accent/20 blur-3xl animate-float" style={{ animationDelay: "1.5s" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute -top-40 -right-40 w-64 h-64 sm:w-96 sm:h-96 rounded-full bg-primary/20 blur-3xl animate-float" />
+        <div className="absolute -bottom-40 -left-40 w-64 h-64 sm:w-96 sm:h-96 rounded-full bg-accent/20 blur-3xl animate-float" style={{ animationDelay: "1.5s" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] rounded-full bg-primary/5 blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -30,12 +30,12 @@ const HeroSection = () => {
             <span className="text-sm font-medium text-primary">Free Learning Platform</span>
           </motion.div>
 
-          <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+          <h1 className="font-display text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
             Learn ChatGPT{" "}
             <span className="gradient-text">the Smart Way</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2">
             Learn how to use ChatGPT for business, study, content creation, coding, 
             and daily productivity — with practical lessons and real prompts.
           </p>

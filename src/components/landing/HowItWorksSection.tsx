@@ -40,7 +40,7 @@ const HowItWorksSection = () => {
               <div className="h-16 w-16 rounded-2xl gradient-primary flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary/25">
                 <step.icon className="h-8 w-8 text-primary-foreground" />
               </div>
-              <div className="absolute top-8 left-full w-full h-px bg-border hidden md:block -translate-y-1/2" style={{ display: i === 2 ? "none" : undefined }} />
+              <div className="absolute top-8 left-full w-full h-px bg-border hidden md:block -translate-y-1/2" style={{ display: i === steps.length - 1 ? "none" : undefined }} />
               <span className="text-xs font-semibold text-primary mb-2 block">Step {i + 1}</span>
               <h3 className="font-display font-semibold text-lg mb-2">{step.title}</h3>
               <p className="text-sm text-muted-foreground">{step.desc}</p>

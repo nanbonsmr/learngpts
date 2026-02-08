@@ -4,8 +4,8 @@ const Footer = () => {
   return (
     <footer className="border-t border-border bg-card">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <div className="h-8 w-8 rounded-lg gradient-primary flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-sm">AI</span>

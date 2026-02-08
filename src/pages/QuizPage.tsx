@@ -120,18 +120,18 @@ const QuizPage = () => {
                   : "You need at least 60% to pass. Review the lessons and try again!"}
               </p>
 
-              <div className="flex items-center justify-center gap-8 mb-8">
+              <div className="flex items-center justify-center gap-6 sm:gap-8 mb-8">
                 <div className="text-center">
-                  <p className="text-4xl font-bold text-primary">{score}</p>
+                  <p className="text-3xl sm:text-4xl font-bold text-primary">{score}</p>
                   <p className="text-sm text-muted-foreground">Correct</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-4xl font-bold">{quiz.length}</p>
+                  <p className="text-3xl sm:text-4xl font-bold">{quiz.length}</p>
                   <p className="text-sm text-muted-foreground">Total</p>
                 </div>
                 <div className="text-center">
                   <p
-                    className={`text-4xl font-bold ${
+                    className={`text-3xl sm:text-4xl font-bold ${
                       passed ? "text-accent" : "text-destructive"
                     }`}
                   >

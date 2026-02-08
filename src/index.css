@@ -98,10 +98,20 @@
   body {
     @apply bg-background text-foreground font-sans;
     font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
 

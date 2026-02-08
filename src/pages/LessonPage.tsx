@@ -41,7 +41,7 @@ const LessonPage = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main className="pt-24 pb-16">
-        <div className="container mx-auto px-4 max-w-3xl">
+        <div className="container mx-auto px-4 max-w-3xl overflow-hidden">
           <Button variant="ghost" asChild className="mb-6">
             <Link to={`/category/${category.id}`}><ArrowLeft className="mr-2 h-4 w-4" /> {category.title}</Link>
           </Button>
@@ -78,7 +78,7 @@ const LessonPage = () => {
                 </span>
               )}
             </div>
-            <h1 className="font-display text-3xl md:text-4xl font-bold mb-4">{lesson.title}</h1>
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-4">{lesson.title}</h1>
           </motion.div>
 
           {/* Explanation */}
