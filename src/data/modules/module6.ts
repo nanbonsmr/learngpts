@@ -4,6 +4,8 @@ import lesson61Image from "@/assets/lessons/lesson-6-1-planning.jpg";
 import lesson62Image from "@/assets/lessons/lesson-6-2-study.jpg";
 import lesson63Image from "@/assets/lessons/lesson-6-3-resume.jpg";
 import content61Planning from "@/assets/lessons/content/content-6-1-planning.jpg";
+import content62Study from "@/assets/lessons/content/content-6-2-study.jpg";
+import content63Resume from "@/assets/lessons/content/content-6-3-resume.jpg";
 import type { Category } from "./types";
 
 const module6: Category = {
@@ -53,6 +55,9 @@ const module6: Category = {
       id: "6-2-study-personal",
       title: "Lesson 6.2 – Personal Writing & Study",
       image: lesson62Image,
+      contentImages: [
+        { src: content62Study, alt: "Study tools with flashcards, spaced repetition calendar, and brain connections", caption: "Active recall + spaced repetition: the two most effective study techniques powered by AI" },
+      ],
       description:
         "Whether you're a student or lifelong learner, ChatGPT is an incredible study tool. Research shows that active recall and spaced repetition are the two most effective study techniques — and ChatGPT excels at both.\n\n**Summarize Notes & Textbooks:**\n• Paste long content → get concise bullet points at your level.\n• Create flashcard Q&A sets for active recall practice.\n• Generate mind maps in text format for visual learners.\n• Convert notes into different formats (tables, timelines, comparison charts).\n\n**Study Plans:**\n• Create custom schedules based on exam dates and topic complexity.\n• Implement spaced repetition schedules (review on days 1, 3, 7, 14, 30).\n• Generate practice questions at increasing difficulty levels.\n• Create mock exams with answer keys and explanations.\n\n**Essay & Research Help:**\n• Generate outlines with thesis statements and argument structure.\n• Research direction suggestions with source recommendations.\n• Grammar, style, and coherence improvement.\n• Citation formatting (APA, MLA, Chicago, Harvard).\n\n**The Feynman Technique with AI:**\nAsk ChatGPT: \"I'm going to explain [concept] to you. Point out any errors, gaps, or oversimplifications in my explanation.\" Then explain the concept in your own words. This is one of the most effective learning methods.\n\n**Important:** Use ChatGPT as a study AID, not to write assignments for you. Academic integrity matters — and you learn nothing from copying.",
       examplePrompt:
@@ -84,6 +89,9 @@ const module6: Category = {
       id: "6-3-resume-career",
       title: "Lesson 6.3 – Resume & Career Assistance",
       image: lesson63Image,
+      contentImages: [
+        { src: content63Resume, alt: "Resume and cover letter optimization with highlighted bullet points", caption: "STAR method bullet points: transform vague descriptions into quantified achievements" },
+      ],
       description:
         "ChatGPT can significantly improve every aspect of your job search. The average job search takes 5 months, and 75% of resumes are rejected by ATS (Applicant Tracking Systems) before a human ever sees them.\n\n**Resume Optimization:**\n• Rewrite bullet points with action verbs and quantified results.\n• Tailor resumes for specific job descriptions (keyword matching).\n• ATS optimization — ensure your resume passes automated filters.\n• Format suggestions for maximum readability.\n\n**The STAR Method for Bullet Points:**\nSituation → Task → Action → Result\n\"Managed\" → \"Spearheaded a cross-functional team of 12 to redesign the customer onboarding flow, reducing churn by 28% and increasing NPS from 32 to 61.\"\n\n**Cover Letters:**\n• Personalized, company-specific letters (never generic).\n• Highlight relevant experience with specific achievements.\n• Show culture fit with company values and mission.\n• Keep under 300 words — hiring managers spend 7 seconds scanning.\n\n**Job Search Messages:**\n• LinkedIn connection requests (personalized, not generic).\n• Post-interview thank-you notes (within 24 hours).\n• Salary negotiation scripts (data-driven, confident).\n• Networking outreach (warm introductions, value-first).\n\n**Interview Preparation:**\n• Common questions with tailored STAR answers.\n• Company-specific research summaries.\n• Questions to ask the interviewer (shows engagement).\n• Mock interview with ChatGPT as interviewer.",
       examplePrompt:

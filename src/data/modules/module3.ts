@@ -6,6 +6,8 @@ import lesson33Image from "@/assets/lessons/lesson-3-3-marketing.jpg";
 import lesson34Image from "@/assets/lessons/lesson-3-4-automation.jpg";
 import content31Email from "@/assets/lessons/content/content-3-1-email.jpg";
 import content32Research from "@/assets/lessons/content/content-3-2-research.jpg";
+import content33Marketing from "@/assets/lessons/content/content-3-3-marketing.jpg";
+import content34Automation from "@/assets/lessons/content/content-3-4-automation.jpg";
 import type { Category } from "./types";
 
 const module3: Category = {
@@ -89,6 +91,9 @@ const module3: Category = {
       id: "3-3-product-marketing",
       title: "Lesson 3.3 – Product Descriptions & Marketing Content",
       image: lesson33Image,
+      contentImages: [
+        { src: content33Marketing, alt: "Product page with compelling copy and social media posts", caption: "Conversion-focused copy: lead with benefits, add social proof, and include a clear CTA" },
+      ],
       description:
         "Great product descriptions and marketing copy can make or break your sales. Studies show that 87% of consumers rate product content as extremely important in purchase decisions (Salsify). ChatGPT excels at creating persuasive, benefit-focused copy.\n\n**What ChatGPT Can Create:**\n• **Product descriptions** — Compelling, benefit-focused copy that converts browsers to buyers.\n• **Sales copy** — Headlines, bullet points, and CTAs optimized for conversion.\n• **Social media captions** — Platform-specific content with hashtags and engagement hooks.\n• **Landing page copy** — Hero sections, feature blocks, testimonial templates, FAQ sections.\n• **Ad copy** — Google Ads, Facebook/Instagram ads, LinkedIn sponsored content.\n\n**The Conversion Copy Formula:**\n1. **Lead with benefits, not features** — \"Save 3 hours/day\" > \"Has automated scheduling\"\n2. **Use power words** — exclusive, proven, effortless, transform, guaranteed, free, instant\n3. **Include social proof** — Numbers, testimonials, trust badges, media mentions\n4. **Create urgency** — Limited time, scarcity, seasonal relevance\n5. **Single clear CTA** — One action per section, not multiple competing options\n\n**A/B Testing with ChatGPT:**\nAlways generate 2-3 versions of important copy and test them. Ask: \"Write 3 headline variations for this product, each using a different emotional trigger: curiosity, fear of missing out, and aspiration.\"\n\n**Platform-Specific Optimization:**\n• Instagram: Visual-first, emoji-heavy, 2-5 relevant hashtags\n• LinkedIn: Professional tone, data-driven, industry insights\n• Twitter/X: Concise, punchy, conversation-starting\n• Email: Subject line is everything, personalization tokens",
       examplePrompt:
@@ -120,6 +125,9 @@ const module3: Category = {
       id: "3-4-automating-workflow",
       title: "Lesson 3.4 – Automating Workflow",
       image: lesson34Image,
+      contentImages: [
+        { src: content34Automation, alt: "Automated workflow connecting email, calendar, and tasks", caption: "Workflow automation: connect your tools into repeatable systems that save hours weekly" },
+      ],
       description:
         "ChatGPT can help you create systems that save hours every week. The key isn't just using AI for one-off tasks — it's building repeatable workflows that compound your productivity.\n\n**Meeting Notes → Structured Summaries:**\nPaste your rough notes → get structured summaries with action items, owners, deadlines, and follow-up emails. McKinsey estimates professionals spend 23 hours/week in meetings — efficient note-taking can save 5+ hours/week.\n\n**Task Planning & Prioritization:**\nDescribe your tasks → get a prioritized, time-blocked schedule using methods like Eisenhower Matrix, Pomodoro, or Eat the Frog.\n\n**SOPs (Standard Operating Procedures):**\nDescribe any process → get a step-by-step SOP document with checklists, decision trees, and edge cases. SOPs reduce errors by 40% in operations teams.\n\n**The Daily Briefing Prompt:**\nCreate a morning prompt you run daily: \"Here are my tasks, meetings, and priorities for today: [list]. Create a time-blocked schedule, suggest 2 things I should delegate, and flag any conflicts or risks.\"\n\n**Integration Ideas:**\n• **Google Docs** — Draft documents, then paste into Docs for formatting\n• **Notion** — Generate database templates, wiki pages, project briefs\n• **Slack** — Draft announcements, status updates, channel descriptions\n• **Email** — Batch-create email sequences with personalization variables\n• **Spreadsheets** — Generate formulas, analysis templates, reporting frameworks\n\n**The Compound Effect:**\nSaving 30 minutes/day through workflow automation = 10+ hours/month = 120+ hours/year. At $50/hour, that's $6,000+/year in reclaimed time PER PERSON.",
       examplePrompt:

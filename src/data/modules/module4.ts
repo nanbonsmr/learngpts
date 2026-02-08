@@ -4,6 +4,8 @@ import lesson41Image from "@/assets/lessons/lesson-4-1-proposals.jpg";
 import lesson42Image from "@/assets/lessons/lesson-4-2-blog-social.jpg";
 import lesson43Image from "@/assets/lessons/lesson-4-3-editing.jpg";
 import content41Proposals from "@/assets/lessons/content/content-4-1-proposals.jpg";
+import content42BlogSocial from "@/assets/lessons/content/content-4-2-blog-social.jpg";
+import content43Editing from "@/assets/lessons/content/content-4-3-editing.jpg";
 import type { Category } from "./types";
 
 const module4: Category = {
@@ -53,6 +55,9 @@ const module4: Category = {
       id: "4-2-blog-social",
       title: "Lesson 4.2 – Blog & Social Media Content",
       image: lesson42Image,
+      contentImages: [
+        { src: content42BlogSocial, alt: "Blog post repurposed into social media content across platforms", caption: "The content repurposing pipeline: one blog post becomes 5+ social posts across platforms" },
+      ],
       description:
         "Content creation is one of ChatGPT's strongest use cases. Businesses that blog get 67% more leads than those that don't (HubSpot), and consistent social media presence drives 78% of purchase decisions.\n\n**Blog Writing with ChatGPT:**\n• **SEO-friendly articles** — Include target keywords, meta descriptions, internal linking suggestions.\n• **How-to guides** — Step-by-step tutorials with screenshots descriptions.\n• **Listicles** — \"Top 10...\" formats that get 2x more shares.\n• **Thought leadership** — Industry analysis with original perspectives.\n• **Content outlines** — Structure first, fill in content later.\n\n**The Content Repurposing Pipeline:**\nOne blog post → 5+ social posts → 1 email newsletter → 1 video script → 1 podcast outline. This 1-to-many approach is how top creators maintain consistency without burnout.\n\n**Social Media Platform Specifics:**\n• **Instagram:** Visual-first, 125-150 word captions, 20-30 hashtags (research shows this is optimal), carousel posts get 3x engagement.\n• **LinkedIn:** Professional tone, 1200-1500 characters optimal, personal stories perform best, no hashtags overload (3-5 max).\n• **Twitter/X:** Under 280 chars, thread format for long-form, questions drive replies.\n• **TikTok/Reels:** Hook in first 3 seconds, text overlay scripts, trend-aligned.\n\n**Video Scripts:**\n• YouTube — Hook (5 sec) → Intro (15 sec) → Content sections → CTA structure.\n• Shorts/Reels — Hook (3 sec) → Rapid-fire value → CTA (3 sec).\n\n**Content Calendar Strategy:**\nMix content pillars: 40% educational, 30% entertaining, 20% promotional, 10% personal. This ratio maximizes engagement while driving sales.",
       examplePrompt:
@@ -84,6 +89,9 @@ const module4: Category = {
       id: "4-3-editing-rewriting",
       title: "Lesson 4.3 – Editing & Rewriting Content",
       image: lesson43Image,
+      contentImages: [
+        { src: content43Editing, alt: "Rough draft being transformed into polished content", caption: "The editing workflow: grammar fix → clarity → tone → enrichment → coherence check" },
+      ],
       description:
         "ChatGPT is an excellent editor — often better than it is as a writer. Editing existing content is where AI truly shines because it has a starting point to work with.\n\n**Grammar & Style Improvement:**\n• Fix grammatical errors while preserving your unique voice.\n• Adjust reading level (Flesch-Kincaid grade 6 for general public, grade 12+ for academic).\n• Eliminate passive voice, filler words, and redundancy.\n\n**Tone Transformation:**\n• Formal → Casual (and vice versa)\n• Persuasive → Informative\n• Technical → Simple\n• Professional → Empathetic\n\n**Content Compression & Expansion:**\n• Compress: Condense a 2000-word report to a 200-word executive summary.\n• Expand: Turn bullet points into full paragraphs with examples and data.\n• Distill: Extract the 3 most important points from a long document.\n\n**Content Repurposing:**\n• Blog post → Twitter thread (key insights as individual tweets)\n• Meeting notes → Email summary\n• Long report → Executive brief\n• Academic paper → Blog post\n• Podcast transcript → Article\n\n**Critical Rule:** Always say \"preserve my original meaning and voice\" when editing. This prevents ChatGPT from changing your message or inserting its own style.\n\n**The Editing Workflow:**\n1. \"Fix grammar and spelling only\" (preserves everything else)\n2. \"Improve clarity and conciseness\" (structural improvements)\n3. \"Adjust tone to [target]\" (voice transformation)\n4. \"Add data points and examples\" (enrichment)\n5. \"Review for logical flow\" (coherence check)",
       examplePrompt:

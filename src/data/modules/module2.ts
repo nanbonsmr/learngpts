@@ -5,6 +5,9 @@ import lesson22Image from "@/assets/lessons/lesson-2-2-templates.jpg";
 import lesson23Image from "@/assets/lessons/lesson-2-3-bad-prompts.jpg";
 import lesson24Image from "@/assets/lessons/lesson-2-4-advanced.jpg";
 import content21Anatomy from "@/assets/lessons/content/content-2-1-anatomy.jpg";
+import content22Templates from "@/assets/lessons/content/content-2-2-templates.jpg";
+import content23BadPrompts from "@/assets/lessons/content/content-2-3-bad-prompts.jpg";
+import content24Advanced from "@/assets/lessons/content/content-2-4-advanced.jpg";
 import type { Category } from "./types";
 
 const module2: Category = {
@@ -54,6 +57,9 @@ const module2: Category = {
       id: "2-2-templates",
       title: "Lesson 2.2 – Prompt Templates for Daily Use",
       image: lesson22Image,
+      contentImages: [
+        { src: content22Templates, alt: "Organized library of reusable prompt templates", caption: "Build a personal template library for emails, summaries, reports, and social posts" },
+      ],
       description:
         "Templates are reusable prompt structures you can customize for any situation. They save time and ensure consistent quality — think of them as \"recipes\" you've already perfected.\n\n**Why Templates Matter:**\nThe average knowledge worker sends 40+ emails per day and creates 3-5 documents per week. Using templates for recurring tasks can save 5-10 hours per week.\n\n**Email Template:**\n\"Write a professional [type] email to [recipient] about [topic]. Tone: [formal/casual]. Include: greeting, main message, call-to-action, sign-off. Keep it under [word count] words.\"\n\n**Summary Template:**\n\"Summarize the following [document type] in [number] bullet points. Focus on [key aspects]. Audience: [who will read it]. Reading level: [simple/technical].\"\n\n**Report Template:**\n\"Create a [type] report on [topic]. Include: executive summary, key findings (with data), analysis, and 3 actionable recommendations. Format: [structure]. Length: [word count].\"\n\n**Social Media Template:**\n\"Write a [platform] post about [topic] for [target audience]. Include: hook (first line), value proposition, CTA, and [number] hashtags. Tone: [casual/professional]. Max [word count] words.\"\n\n**Meeting Prep Template:**\n\"I have a meeting about [topic] with [attendees]. Prepare: agenda (5 items), 3 discussion questions, key data points to reference, and a summary template for notes.\"\n\n**Building Your Template Library:**\n1. Start by identifying your 5 most repetitive tasks\n2. Write a prompt that works well for each\n3. Replace specific details with [brackets]\n4. Test each template 3 times with different inputs\n5. Save in a document, Notion page, or bookmark",
       examplePrompt:
@@ -85,6 +91,9 @@ const module2: Category = {
       id: "2-3-avoiding-bad",
       title: "Lesson 2.3 – Avoiding Bad Prompts",
       image: lesson23Image,
+      contentImages: [
+        { src: content23BadPrompts, alt: "Comparison of vague prompts vs specific prompts", caption: "Common prompt mistakes: vague requests produce poor results — specificity is the fix" },
+      ],
       description:
         "Bad prompts produce bad results. Understanding common mistakes is just as important as learning best practices — it helps you self-diagnose when outputs aren't meeting expectations.\n\n**The 7 Most Common Prompt Mistakes:**\n\n**❌ 1. Too vague:**\n\"Tell me about marketing\" → ChatGPT doesn't know what aspect, audience, or depth.\n✅ Fix: \"List 5 low-budget digital marketing strategies for a new online clothing store targeting women aged 25-35.\"\n\n**❌ 2. Too long & unfocused:**\nA 500-word prompt with multiple unrelated questions → ChatGPT loses focus.\n✅ Fix: One task per prompt. Break complex requests into sequential messages.\n\n**❌ 3. No context or format:**\n\"Write an email\" → No recipient, purpose, tone, or length.\n✅ Fix: \"Write a formal 100-word email to my manager requesting time off next Friday.\"\n\n**❌ 4. Assuming ChatGPT knows your situation:**\n\"Continue the project\" → No memory of previous sessions.\n✅ Fix: Always provide full context at the start of each conversation.\n\n**❌ 5. Asking for real-time or private data:**\n\"What's Apple's stock price right now?\" → Training data has cutoff.\n✅ Fix: Use web-browsing mode, or acknowledge the limitation.\n\n**❌ 6. Expecting perfection on first try:**\nAccepting whatever ChatGPT generates without refinement.\n✅ Fix: Always iterate. \"Make it shorter\", \"More formal\", \"Add data\".\n\n**❌ 7. Not specifying the audience:**\n\"Explain machine learning\" — for a PhD student? A 12-year-old? A CEO?\n✅ Fix: Always state who will consume the output.\n\n**The Prompt Quality Checklist:**\nBefore sending any important prompt, verify:\n☐ Is the task specific and single-focused?\n☐ Is context provided (who you are, what you need, why)?\n☐ Is the format specified (bullet points, table, paragraphs)?\n☐ Are constraints set (word count, tone, audience)?\n☐ Did you set a role if relevant?",
       examplePrompt:
@@ -116,6 +125,9 @@ const module2: Category = {
       id: "2-4-advanced-techniques",
       title: "Lesson 2.4 – Advanced Prompt Techniques",
       image: lesson24Image,
+      contentImages: [
+        { src: content24Advanced, alt: "Advanced prompt engineering techniques flowchart", caption: "Chain-of-thought, few-shot, and self-critique — techniques used by professional AI engineers" },
+      ],
       description:
         "Take your prompting to the next level with techniques used by professional AI engineers and researchers.\n\n**1. Chain-of-Thought (CoT) Prompting**\nAsk ChatGPT to \"think step by step\" before giving a final answer. This dramatically improves accuracy for complex reasoning tasks like math, logic, and analysis.\nResearch shows CoT prompting improves accuracy by 40-70% on reasoning tasks.\nExample: \"Solve this problem step by step: If a store has a 30% off sale and you have an additional 10% coupon, what's the final price of a $200 item?\"\n\n**2. Multi-Step Instructions**\nBreak a large task into numbered steps within a single prompt. This ensures ChatGPT addresses each part systematically.\nExample: \"Step 1: Research the topic. Step 2: Create an outline. Step 3: Write the first draft. Step 4: Review and improve.\"\n\n**3. Prompt Tweaking (Iteration)**\nNever settle for the first output. Professional prompt engineers iterate 3-5 times on average. Use follow-ups:\n• \"Make it shorter\" / \"Make it more detailed\"\n• \"Change the tone to casual\"\n• \"Add 3 real-world examples with data\"\n• \"Now format it as a table\"\n• \"Critique your own response and improve it\"\n\n**4. Few-Shot Prompting**\nProvide 2-3 examples of the output you want, then ask for more. This is one of the most powerful techniques for consistent formatting.\nExample: \"Here's an example of the style I want: [example 1]. And another: [example 2]. Now write 5 more in this same style.\"\n\n**5. Self-Critique Prompting**\nAsk ChatGPT to evaluate its own work: \"Now review your response. Identify 3 weaknesses and rewrite it addressing those weaknesses.\" This consistently improves quality by 20-30%.\n\n**6. Negative Prompting (What NOT to do)**\nTelling ChatGPT what to avoid is as powerful as telling it what to do: \"Don't use jargon. Don't be generic. Don't exceed 200 words. Don't use passive voice.\"\n\n**7. Temperature Control Through Language**\n• \"Be creative and think outside the box\" → higher creativity\n• \"Be precise and factual, no speculation\" → more conservative\n• \"Give me unconventional approaches\" → divergent thinking\n• \"Stick strictly to established best practices\" → convergent thinking",
       examplePrompt:
