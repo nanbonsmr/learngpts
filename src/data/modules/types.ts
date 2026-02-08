@@ -21,6 +21,7 @@ export interface Lesson {
   exampleOutput: string;
   practiceTask: string;
   duration: string;
+  image?: string;
   caseStudy?: CaseStudy;
   realData?: RealData;
 }

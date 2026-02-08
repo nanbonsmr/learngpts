@@ -1,5 +1,8 @@
 import { Settings } from "lucide-react";
 import module7Image from "@/assets/module-7-advanced.jpg";
+import lesson71Image from "@/assets/lessons/lesson-7-1-custom-gpts.jpg";
+import lesson72Image from "@/assets/lessons/lesson-7-2-automations.jpg";
+import lesson73Image from "@/assets/lessons/lesson-7-3-engineering.jpg";
 import type { Category } from "./types";
 
 const module7: Category = {
@@ -14,6 +17,7 @@ const module7: Category = {
     {
       id: "7-1-custom-gpts",
       title: "Lesson 7.1 – Custom GPTs & Personal AI Assistants",
+      image: lesson71Image,
       description:
         "OpenAI allows Plus users to create Custom GPTs — specialized AI assistants tailored to specific tasks. Over 3 million Custom GPTs have been created since the feature launched, demonstrating massive demand for specialized AI.\n\n**What are Custom GPTs?**\nPersonalized versions of ChatGPT with:\n• Custom instructions permanently baked in.\n• Specific knowledge files uploaded (PDFs, docs, spreadsheets — up to 20 files).\n• Defined behavior, personality, and response style.\n• Optional API connections (Actions) for real-time data.\n• Custom conversation starters for guided interactions.\n\n**High-Value Use Cases:**\n• **Marketing assistant** — Knows your brand voice, audience personas, and campaign history.\n• **Writing coach** — Follows your style guide, editorial standards, and tone preferences.\n• **Customer support bot** — Trained on your FAQ, policies, and product catalog.\n• **Code reviewer** — Knows your tech stack, coding standards, and architecture patterns.\n• **Personal tutor** — Adapts to your learning level, preferred analogies, and weak areas.\n• **Sales assistant** — Knows your product, pricing, competitors, and objection responses.\n\n**How to Build One:**\n1. Go to ChatGPT → Explore GPTs → Create.\n2. Name it and write system instructions (personality, knowledge, boundaries).\n3. Upload knowledge files (PDFs, docs, data).\n4. Configure conversation starters.\n5. Optionally add Actions (API calls for live data).\n6. Test thoroughly with edge cases.\n7. Publish (private, shared link, or GPT Store).\n\n**System Prompt Design:**\nThe system prompt is the most important part. It should define:\n• Who the GPT is (role, expertise, personality)\n• What it knows and doesn't know (knowledge boundaries)\n• How it responds (format, tone, length)\n• What it refuses to do (safety boundaries)\n• Escalation procedures (when to hand off to humans)",
       examplePrompt:
@@ -44,6 +48,7 @@ const module7: Category = {
     {
       id: "7-2-automations",
       title: "Lesson 7.2 – Automations & Integrations",
+      image: lesson72Image,
       description:
         "Combine ChatGPT with other tools to create powerful automated workflows. The integration ecosystem has exploded — Zapier alone has 6,000+ app integrations that can connect to ChatGPT.\n\n**Zapier + ChatGPT Automations:**\n• New email → ChatGPT summarizes → sends to Slack.\n• New form submission → ChatGPT drafts response → saves to Google Sheets.\n• New blog post → ChatGPT creates social posts → schedules via Buffer.\n• Support ticket → ChatGPT categorizes + suggests response → assigns to team.\n• Calendar event created → ChatGPT generates agenda → sends to attendees.\n\n**Notion + ChatGPT:**\n• Generate database templates with formulas and relations.\n• Create wiki pages, meeting notes, project briefs.\n• Build SOPs and knowledge bases.\n• Auto-populate project templates.\n\n**Google Sheets + ChatGPT:**\n• Analyze datasets and create narrative summaries.\n• Generate complex formulas with explanations.\n• Clean and categorize data automatically.\n• Create pivot table structures and reporting frameworks.\n\n**ChatGPT API for Developers:**\n• Build custom chatbots for your website.\n• Create automated email responders.\n• Generate personalized content at scale.\n• Power recommendation engines.\n\n**The Automation ROI Formula:**\nTime saved per task × Number of occurrences per week × 52 weeks = Annual hours saved.\nAnnual hours saved × Hourly rate = Annual dollar value.\n\nExample: 15 min/email × 20 emails/week × 52 weeks = 260 hours/year. At $50/hour = $13,000/year saved on ONE automation.",
       examplePrompt:
@@ -74,6 +79,7 @@ const module7: Category = {
     {
       id: "7-3-advanced-engineering",
       title: "Lesson 7.3 – Advanced Prompt Engineering",
+      image: lesson73Image,
       description:
         "Master the most sophisticated prompting techniques used by professional AI engineers and researchers. These techniques are what separate casual users from AI power users.\n\n**1. Multi-step Sequential Prompts:**\nChain multiple instructions in sequence for complex outputs. Number each step and use explicit handoff language (\"Now that you've completed Step 1...\").\n\n**2. Conditional Logic in Prompts:**\n\"If the user asks about X, respond with Y. If they ask about Z, respond with W.\"\nEssential for Custom GPTs, chatbot design, and automated workflows.\n\n**3. System Prompt Architecture:**\nProfessional system prompts follow the P-K-B-F-E framework:\n• **Persona** — Who the AI is (role, personality, expertise level)\n• **Knowledge** — What it knows and doesn't know (boundaries)\n• **Behavior** — How it responds (format, tone, length rules)\n• **Fallbacks** — What to do when uncertain (escalation, clarification)\n• **Examples** — Sample interactions showing desired behavior\n\n**4. Temperature Control Through Language:**\n• \"Be creative and divergent\" → higher randomness\n• \"Be precise and factual\" → lower randomness\n• \"Give me unconventional approaches\" → exploratory\n• \"Stick strictly to established practices\" → conservative\n\n**5. Output Consistency Techniques:**\n• Few-shot examples (show 2-3 examples of desired format)\n• JSON/structured output specification\n• Constraint lists (must include X, must not include Y)\n• Word count and section count requirements\n\n**6. Meta-Prompting:**\nAsk ChatGPT to write better prompts FOR you:\n\"I want to achieve X. Write the most effective prompt I should use, including role, context, task, format, and constraints.\"\n\n**7. Adversarial Testing:**\nTest your prompts with edge cases: \"What happens if someone asks about [off-topic]? What if they try to make you [break character]? What if the input is [malformed]?\"",
       examplePrompt:

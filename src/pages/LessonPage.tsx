@@ -46,10 +46,26 @@ const LessonPage = () => {
             <Link to={`/category/${category.id}`}><ArrowLeft className="mr-2 h-4 w-4" /> {category.title}</Link>
           </Button>
 
+          {/* Lesson Image */}
+          {lesson.image && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-8 rounded-2xl overflow-hidden"
+            >
+              <img
+                src={lesson.image}
+                alt={lesson.title}
+                className="w-full h-48 md:h-64 object-cover"
+              />
+            </motion.div>
+          )}
+
           {/* Lesson Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.05 }}
             className="mb-8"
           >
             <div className="flex items-center gap-2 mb-2">

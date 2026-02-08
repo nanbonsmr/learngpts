@@ -1,5 +1,9 @@
 import { Briefcase } from "lucide-react";
 import module3Image from "@/assets/module-3-business.jpg";
+import lesson31Image from "@/assets/lessons/lesson-3-1-email.jpg";
+import lesson32Image from "@/assets/lessons/lesson-3-2-research.jpg";
+import lesson33Image from "@/assets/lessons/lesson-3-3-marketing.jpg";
+import lesson34Image from "@/assets/lessons/lesson-3-4-automation.jpg";
 import type { Category } from "./types";
 
 const module3: Category = {
@@ -14,6 +18,7 @@ const module3: Category = {
     {
       id: "3-1-email-communication",
       title: "Lesson 3.1 – Email and Communication",
+      image: lesson31Image,
       description:
         "Email is the backbone of business communication — the average professional sends 40+ emails daily and spends 28% of their workweek on email (McKinsey). ChatGPT can dramatically reduce this time while improving quality.\n\n**Types of business emails ChatGPT excels at:**\n• **Cold outreach** — First-contact emails to prospects. Key: personalization, social proof, clear CTA.\n• **Follow-ups** — After meetings, proposals, or no-response situations. Key: value reinforcement, urgency without pressure.\n• **Client updates** — Project status, milestone celebrations, change notifications. Key: transparency, structured information.\n• **Internal communications** — Team announcements, policy changes, project kickoffs. Key: clarity, action items.\n• **Negotiation emails** — Pricing discussions, scope changes, contract terms. Key: firmness balanced with empathy.\n• **Apology/crisis emails** — Service disruptions, mistakes, delays. Key: accountability, solution-focused.\n\n**Email Writing Best Practices:**\n1. Always specify recipient, context, relationship, and desired tone.\n2. Request subject line suggestions — 47% of emails are opened based on subject line alone (OptinMonster).\n3. Keep emails concise — specify word limits (80-150 words ideal for business).\n4. Include a single, clear call-to-action.\n5. Ask ChatGPT to write 2-3 variations for A/B testing.\n\n**Advanced Email Techniques:**\n• **The AIDA Framework** — Attention, Interest, Desire, Action. Great for sales emails.\n• **The PAS Framework** — Problem, Agitate, Solution. Great for outreach.\n• **The BAB Framework** — Before, After, Bridge. Great for case study emails.",
       examplePrompt:
@@ -44,6 +49,7 @@ const module3: Category = {
     {
       id: "3-2-market-research",
       title: "Lesson 3.2 – Market Research & Planning",
+      image: lesson32Image,
       description:
         "ChatGPT is a powerful brainstorming and research partner. While it shouldn't replace primary data, it excels at synthesizing information, identifying patterns, and creating structured analysis frameworks.\n\n**What ChatGPT Can Do for Market Research:**\n• **Industry overviews** — Quick summaries of market size, growth rates, key players.\n• **Trend identification** — Spotting emerging patterns from public knowledge.\n• **SWOT analysis** — Structured Strengths, Weaknesses, Opportunities, Threats.\n• **Competitive analysis** — Feature comparison matrices, positioning maps.\n• **Customer personas** — Detailed buyer profiles with demographics and psychographics.\n• **Business model evaluation** — Revenue model analysis, unit economics estimation.\n\n**The Research Workflow:**\n1. Start broad: \"Give me an overview of the [industry] market.\"\n2. Go deep: \"Now analyze the top 5 competitors in this space.\"\n3. Get specific: \"Create a SWOT analysis for my specific business idea.\"\n4. Validate: \"What are the biggest risks? What could go wrong?\"\n5. Act: \"Based on this analysis, suggest 3 actionable next steps.\"\n\n**Critical Warning:** Always verify ChatGPT's market data with real sources (Statista, IBISWorld, industry reports). ChatGPT may generate plausible-sounding but fabricated statistics. Use it for structure and ideation, then validate with primary research.\n\n**Power Move — The \"Pre-Mortem\" Technique:**\nAsk ChatGPT: \"Imagine my business has failed in 12 months. What were the 5 most likely reasons?\" This surfaces risks you might not consider in optimistic planning.",
       examplePrompt:
@@ -74,6 +80,7 @@ const module3: Category = {
     {
       id: "3-3-product-marketing",
       title: "Lesson 3.3 – Product Descriptions & Marketing Content",
+      image: lesson33Image,
       description:
         "Great product descriptions and marketing copy can make or break your sales. Studies show that 87% of consumers rate product content as extremely important in purchase decisions (Salsify). ChatGPT excels at creating persuasive, benefit-focused copy.\n\n**What ChatGPT Can Create:**\n• **Product descriptions** — Compelling, benefit-focused copy that converts browsers to buyers.\n• **Sales copy** — Headlines, bullet points, and CTAs optimized for conversion.\n• **Social media captions** — Platform-specific content with hashtags and engagement hooks.\n• **Landing page copy** — Hero sections, feature blocks, testimonial templates, FAQ sections.\n• **Ad copy** — Google Ads, Facebook/Instagram ads, LinkedIn sponsored content.\n\n**The Conversion Copy Formula:**\n1. **Lead with benefits, not features** — \"Save 3 hours/day\" > \"Has automated scheduling\"\n2. **Use power words** — exclusive, proven, effortless, transform, guaranteed, free, instant\n3. **Include social proof** — Numbers, testimonials, trust badges, media mentions\n4. **Create urgency** — Limited time, scarcity, seasonal relevance\n5. **Single clear CTA** — One action per section, not multiple competing options\n\n**A/B Testing with ChatGPT:**\nAlways generate 2-3 versions of important copy and test them. Ask: \"Write 3 headline variations for this product, each using a different emotional trigger: curiosity, fear of missing out, and aspiration.\"\n\n**Platform-Specific Optimization:**\n• Instagram: Visual-first, emoji-heavy, 2-5 relevant hashtags\n• LinkedIn: Professional tone, data-driven, industry insights\n• Twitter/X: Concise, punchy, conversation-starting\n• Email: Subject line is everything, personalization tokens",
       examplePrompt:
@@ -104,6 +111,7 @@ const module3: Category = {
     {
       id: "3-4-automating-workflow",
       title: "Lesson 3.4 – Automating Workflow",
+      image: lesson34Image,
       description:
         "ChatGPT can help you create systems that save hours every week. The key isn't just using AI for one-off tasks — it's building repeatable workflows that compound your productivity.\n\n**Meeting Notes → Structured Summaries:**\nPaste your rough notes → get structured summaries with action items, owners, deadlines, and follow-up emails. McKinsey estimates professionals spend 23 hours/week in meetings — efficient note-taking can save 5+ hours/week.\n\n**Task Planning & Prioritization:**\nDescribe your tasks → get a prioritized, time-blocked schedule using methods like Eisenhower Matrix, Pomodoro, or Eat the Frog.\n\n**SOPs (Standard Operating Procedures):**\nDescribe any process → get a step-by-step SOP document with checklists, decision trees, and edge cases. SOPs reduce errors by 40% in operations teams.\n\n**The Daily Briefing Prompt:**\nCreate a morning prompt you run daily: \"Here are my tasks, meetings, and priorities for today: [list]. Create a time-blocked schedule, suggest 2 things I should delegate, and flag any conflicts or risks.\"\n\n**Integration Ideas:**\n• **Google Docs** — Draft documents, then paste into Docs for formatting\n• **Notion** — Generate database templates, wiki pages, project briefs\n• **Slack** — Draft announcements, status updates, channel descriptions\n• **Email** — Batch-create email sequences with personalization variables\n• **Spreadsheets** — Generate formulas, analysis templates, reporting frameworks\n\n**The Compound Effect:**\nSaving 30 minutes/day through workflow automation = 10+ hours/month = 120+ hours/year. At $50/hour, that's $6,000+/year in reclaimed time PER PERSON.",
       examplePrompt:

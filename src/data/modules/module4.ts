@@ -1,5 +1,8 @@
 import { Rocket } from "lucide-react";
 import module4Image from "@/assets/module-4-freelancing.jpg";
+import lesson41Image from "@/assets/lessons/lesson-4-1-proposals.jpg";
+import lesson42Image from "@/assets/lessons/lesson-4-2-blog-social.jpg";
+import lesson43Image from "@/assets/lessons/lesson-4-3-editing.jpg";
 import type { Category } from "./types";
 
 const module4: Category = {
@@ -14,6 +17,7 @@ const module4: Category = {
     {
       id: "4-1-proposals",
       title: "Lesson 4.1 – Proposals & Client Communication",
+      image: lesson41Image,
       description:
         "Winning freelance work starts with compelling proposals. The freelance economy represents $1.57 trillion in the US alone, with 73.3 million freelancers — competition is fierce.\n\n**Proposal Writing with ChatGPT:**\n• Customize proposals for each client's specific needs and language.\n• Highlight relevant experience with quantified results.\n• Include clear deliverables, phased timeline, and transparent pricing.\n• Mirror the client's tone and terminology from their job post.\n\n**The Winning Proposal Structure:**\n1. **Personalized greeting** — Reference their specific project or company.\n2. **Understanding statement** — Prove you read their brief (\"I see you need X because Y\").\n3. **Your approach** — 3-4 phases with brief descriptions.\n4. **Deliverables list** — Exact items they'll receive.\n5. **Timeline** — Realistic with milestones.\n6. **Investment** — Frame as investment, not cost. Include payment terms.\n7. **Social proof** — Relevant results, testimonials, portfolio links.\n8. **Next steps** — Clear, low-friction CTA.\n\n**Service Descriptions:**\nCreate clear, benefit-focused descriptions with tiered packages (Basic/Standard/Premium). Tiered pricing increases average deal size by 30% (pricing psychology research).\n\n**Pricing Communication:**\n• Lead with value before revealing price.\n• Handle discount requests by adjusting scope, not rate.\n• Use anchoring — present premium option first.\n\n**Client Onboarding:**\nAutomate welcome sequences: questionnaires, kickoff agendas, expectation-setting messages.",
       examplePrompt:
@@ -44,6 +48,7 @@ const module4: Category = {
     {
       id: "4-2-blog-social",
       title: "Lesson 4.2 – Blog & Social Media Content",
+      image: lesson42Image,
       description:
         "Content creation is one of ChatGPT's strongest use cases. Businesses that blog get 67% more leads than those that don't (HubSpot), and consistent social media presence drives 78% of purchase decisions.\n\n**Blog Writing with ChatGPT:**\n• **SEO-friendly articles** — Include target keywords, meta descriptions, internal linking suggestions.\n• **How-to guides** — Step-by-step tutorials with screenshots descriptions.\n• **Listicles** — \"Top 10...\" formats that get 2x more shares.\n• **Thought leadership** — Industry analysis with original perspectives.\n• **Content outlines** — Structure first, fill in content later.\n\n**The Content Repurposing Pipeline:**\nOne blog post → 5+ social posts → 1 email newsletter → 1 video script → 1 podcast outline. This 1-to-many approach is how top creators maintain consistency without burnout.\n\n**Social Media Platform Specifics:**\n• **Instagram:** Visual-first, 125-150 word captions, 20-30 hashtags (research shows this is optimal), carousel posts get 3x engagement.\n• **LinkedIn:** Professional tone, 1200-1500 characters optimal, personal stories perform best, no hashtags overload (3-5 max).\n• **Twitter/X:** Under 280 chars, thread format for long-form, questions drive replies.\n• **TikTok/Reels:** Hook in first 3 seconds, text overlay scripts, trend-aligned.\n\n**Video Scripts:**\n• YouTube — Hook (5 sec) → Intro (15 sec) → Content sections → CTA structure.\n• Shorts/Reels — Hook (3 sec) → Rapid-fire value → CTA (3 sec).\n\n**Content Calendar Strategy:**\nMix content pillars: 40% educational, 30% entertaining, 20% promotional, 10% personal. This ratio maximizes engagement while driving sales.",
       examplePrompt:
@@ -74,6 +79,7 @@ const module4: Category = {
     {
       id: "4-3-editing-rewriting",
       title: "Lesson 4.3 – Editing & Rewriting Content",
+      image: lesson43Image,
       description:
         "ChatGPT is an excellent editor — often better than it is as a writer. Editing existing content is where AI truly shines because it has a starting point to work with.\n\n**Grammar & Style Improvement:**\n• Fix grammatical errors while preserving your unique voice.\n• Adjust reading level (Flesch-Kincaid grade 6 for general public, grade 12+ for academic).\n• Eliminate passive voice, filler words, and redundancy.\n\n**Tone Transformation:**\n• Formal → Casual (and vice versa)\n• Persuasive → Informative\n• Technical → Simple\n• Professional → Empathetic\n\n**Content Compression & Expansion:**\n• Compress: Condense a 2000-word report to a 200-word executive summary.\n• Expand: Turn bullet points into full paragraphs with examples and data.\n• Distill: Extract the 3 most important points from a long document.\n\n**Content Repurposing:**\n• Blog post → Twitter thread (key insights as individual tweets)\n• Meeting notes → Email summary\n• Long report → Executive brief\n• Academic paper → Blog post\n• Podcast transcript → Article\n\n**Critical Rule:** Always say \"preserve my original meaning and voice\" when editing. This prevents ChatGPT from changing your message or inserting its own style.\n\n**The Editing Workflow:**\n1. \"Fix grammar and spelling only\" (preserves everything else)\n2. \"Improve clarity and conciseness\" (structural improvements)\n3. \"Adjust tone to [target]\" (voice transformation)\n4. \"Add data points and examples\" (enrichment)\n5. \"Review for logical flow\" (coherence check)",
       examplePrompt:
