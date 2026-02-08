@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { z } from "zod";
 import Navbar from "@/components/Navbar";
@@ -10,9 +11,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Loader2, Save, User, Mail, Calendar, BookOpen, Target } from "lucide-react";
+import { Loader2, Save, User, Mail, Calendar, BookOpen, Target, Award, ArrowRight } from "lucide-react";
 import { toast } from "@/components/ui/sonner";
 import { categories } from "@/data/content";
+import { useCertificateStatus } from "@/hooks/useCertificateStatus";
 
 const displayNameSchema = z
   .string()
@@ -22,6 +24,7 @@ const displayNameSchema = z
 const Profile = () => {
   const { user, refreshDisplayName } = useAuth();
   const { user: appUser } = useAppStore();
+  const { hasCertificate } = useCertificateStatus();
   const [displayName, setDisplayName] = useState("");
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -224,6 +227,53 @@ const Profile = () => {
                     </p>
                   </div>
                 </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          {/* Certificate Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-display text-xl flex items-center gap-2">
+                  <Award className="h-5 w-5 text-primary" />
+                  Certificate
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                {hasCertificate ? (
+                  <Link
+                    to="/certificate"
+                    className="flex items-center gap-3 p-4 rounded-xl bg-accent/10 border border-accent/20 hover:bg-accent/15 transition-colors"
+                  >
+                    <div className="h-10 w-10 rounded-full bg-accent/20 flex items-center justify-center shrink-0">
+                      <Award className="h-5 w-5 text-accent" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="font-medium text-sm text-accent">🎓 Certified ChatGPT Master</p>
+                      <p className="text-xs text-muted-foreground">View or download your certificate</p>
+                    </div>
+                    <ArrowRight className="h-4 w-4 text-accent shrink-0" />
+                  </Link>
+                ) : (
+                  <Link
+                    to="/certificate"
+                    className="flex items-center gap-3 p-4 rounded-xl border border-border hover:bg-secondary/50 transition-colors"
+                  >
+                    <div className="h-10 w-10 rounded-full bg-muted flex items-center justify-center shrink-0">
+                      <Award className="h-5 w-5 text-muted-foreground" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="font-medium text-sm">Certificate not yet earned</p>
+                      <p className="text-xs text-muted-foreground">Complete all lessons and purchase for $5</p>
+                    </div>
+                    <ArrowRight className="h-4 w-4 text-muted-foreground shrink-0" />
+                  </Link>
+                )}
               </CardContent>
             </Card>
           </motion.div>
