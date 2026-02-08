@@ -94,6 +94,20 @@ export const useAppStore = create<AppState>()(
           },
         }),
     }),
-    { name: "chatgpt-learning-store" }
+    {
+      name: "chatgpt-learning-store",
+      merge: (persistedState: any, currentState: AppState) => {
+        const persisted = (persistedState as Partial<AppState>) ?? {};
+        return {
+          ...currentState,
+          ...persisted,
+          user: {
+            ...currentState.user,
+            ...(persisted.user ?? {}),
+            savedResources: persisted.user?.savedResources ?? [],
+          },
+        };
+      },
+    }
   )
 );
