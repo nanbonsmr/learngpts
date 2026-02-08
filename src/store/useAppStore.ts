@@ -8,6 +8,7 @@ interface UserProfile {
   completedLessons: string[];
   completedQuizzes: string[];
   favoritePrompts: string[];
+  savedResources: string[];
 }
 
 interface AppState {
@@ -19,6 +20,7 @@ interface AppState {
   uncompleteLesson: (lessonId: string) => void;
   completeQuiz: (categoryId: string) => void;
   toggleFavoritePrompt: (promptId: string) => void;
+  toggleSavedResource: (resourceTitle: string) => void;
   resetProgress: () => void;
 }
 
@@ -32,6 +34,7 @@ export const useAppStore = create<AppState>()(
         completedLessons: [],
         completedQuizzes: [],
         favoritePrompts: [],
+        savedResources: [],
       },
       setGoal: (goal) =>
         set((state) => ({ user: { ...state.user, goal } })),
@@ -69,6 +72,15 @@ export const useAppStore = create<AppState>()(
               : [...state.user.favoritePrompts, promptId],
           },
         })),
+      toggleSavedResource: (resourceTitle) =>
+        set((state) => ({
+          user: {
+            ...state.user,
+            savedResources: state.user.savedResources.includes(resourceTitle)
+              ? state.user.savedResources.filter((t) => t !== resourceTitle)
+              : [...state.user.savedResources, resourceTitle],
+          },
+        })),
       resetProgress: () =>
         set({
           user: {
@@ -78,6 +90,7 @@ export const useAppStore = create<AppState>()(
             completedLessons: [],
             completedQuizzes: [],
             favoritePrompts: [],
+            savedResources: [],
           },
         }),
     }),

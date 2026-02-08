@@ -48,6 +48,7 @@ export type Database = {
           id: string
           level: string | null
           onboarding_complete: boolean
+          saved_resources: string[]
           updated_at: string
           user_id: string
         }
@@ -60,6 +61,7 @@ export type Database = {
           id?: string
           level?: string | null
           onboarding_complete?: boolean
+          saved_resources?: string[]
           updated_at?: string
           user_id: string
         }
@@ -72,6 +74,7 @@ export type Database = {
           id?: string
           level?: string | null
           onboarding_complete?: boolean
+          saved_resources?: string[]
           updated_at?: string
           user_id?: string
         }

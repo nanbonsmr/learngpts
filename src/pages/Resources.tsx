@@ -3,20 +3,28 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { resources } from "@/data/content";
+import { useAppStore } from "@/store/useAppStore";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { ExternalLink, Search, X } from "lucide-react";
+import { ExternalLink, Search, X, Bookmark, BookmarkCheck } from "lucide-react";
+import { toast } from "@/hooks/use-toast";
 
-const allResourceCategories = ["All", ...Array.from(new Set(resources.map((r) => r.category)))];
+const allResourceCategories = ["All", "Saved", ...Array.from(new Set(resources.map((r) => r.category)))];
 
 const Resources = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
+  const savedResources = useAppStore((s) => s.user.savedResources);
+  const toggleSavedResource = useAppStore((s) => s.toggleSavedResource);
 
   const filtered = useMemo(() => {
-    let result = activeCategory === "All"
-      ? resources
-      : resources.filter((r) => r.category === activeCategory);
+    let result = resources;
+
+    if (activeCategory === "Saved") {
+      result = result.filter((r) => savedResources.includes(r.title));
+    } else if (activeCategory !== "All") {
+      result = result.filter((r) => r.category === activeCategory);
+    }
 
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
@@ -28,7 +36,18 @@ const Resources = () => {
       );
     }
     return result;
-  }, [activeCategory, searchQuery]);
+  }, [activeCategory, searchQuery, savedResources]);
+
+  const handleToggleSave = (e: React.MouseEvent, title: string) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const isSaved = savedResources.includes(title);
+    toggleSavedResource(title);
+    toast({
+      title: isSaved ? "Removed from saved" : "Saved for later",
+      description: isSaved ? `"${title}" removed from your list.` : `"${title}" added to your saved resources.`,
+    });
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -74,11 +93,22 @@ const Resources = () => {
                 key={cat}
                 variant={activeCategory === cat ? "default" : "outline"}
                 className={`cursor-pointer transition-all ${
-                  activeCategory === cat ? "gradient-primary border-0 text-primary-foreground" : "hover:bg-secondary"
+                  activeCategory === cat
+                    ? cat === "Saved"
+                      ? "bg-accent text-accent-foreground border-0"
+                      : "gradient-primary border-0 text-primary-foreground"
+                    : "hover:bg-secondary"
                 }`}
                 onClick={() => setActiveCategory(cat)}
               >
-                {cat}
+                {cat === "Saved" ? (
+                  <span className="flex items-center gap-1">
+                    <BookmarkCheck className="h-3 w-3" />
+                    Saved ({savedResources.length})
+                  </span>
+                ) : (
+                  cat
+                )}
               </Badge>
             ))}
           </div>
@@ -89,38 +119,76 @@ const Resources = () => {
               animate={{ opacity: 1 }}
               className="text-center py-16"
             >
-              <Search className="h-10 w-10 text-muted-foreground/40 mx-auto mb-3" />
-              <p className="text-muted-foreground text-lg">No resources found for "{searchQuery}"</p>
-              <button
-                onClick={() => { setSearchQuery(""); setActiveCategory("All"); }}
-                className="mt-2 text-sm text-primary hover:underline"
-              >
-                Clear filters
-              </button>
+              {activeCategory === "Saved" ? (
+                <>
+                  <Bookmark className="h-10 w-10 text-muted-foreground/40 mx-auto mb-3" />
+                  <p className="text-muted-foreground text-lg">No saved resources yet</p>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    Click the bookmark icon on any resource to save it for later.
+                  </p>
+                  <button
+                    onClick={() => setActiveCategory("All")}
+                    className="mt-3 text-sm text-primary hover:underline"
+                  >
+                    Browse all resources
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Search className="h-10 w-10 text-muted-foreground/40 mx-auto mb-3" />
+                  <p className="text-muted-foreground text-lg">No resources found for "{searchQuery}"</p>
+                  <button
+                    onClick={() => { setSearchQuery(""); setActiveCategory("All"); }}
+                    className="mt-2 text-sm text-primary hover:underline"
+                  >
+                    Clear filters
+                  </button>
+                </>
+              )}
             </motion.div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {filtered.map((resource, i) => (
-                <motion.a
-                  key={resource.title}
-                  href={resource.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.03 }}
-                  className="group glass-card rounded-2xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-                >
-                  <div className="flex items-center justify-between mb-3">
-                    <Badge variant="secondary" className="text-xs">{resource.category}</Badge>
-                    <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                  </div>
-                  <h3 className="font-display font-semibold mb-2 group-hover:text-primary transition-colors">
-                    {resource.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">{resource.description}</p>
-                </motion.a>
-              ))}
+              {filtered.map((resource, i) => {
+                const isSaved = savedResources.includes(resource.title);
+                return (
+                  <motion.a
+                    key={resource.title}
+                    href={resource.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.03 }}
+                    className="group glass-card rounded-2xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 relative"
+                  >
+                    <div className="flex items-center justify-between mb-3">
+                      <Badge variant="secondary" className="text-xs">{resource.category}</Badge>
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={(e) => handleToggleSave(e, resource.title)}
+                          className={`p-1 rounded-md transition-colors ${
+                            isSaved
+                              ? "text-primary hover:text-primary/80"
+                              : "text-muted-foreground hover:text-foreground"
+                          }`}
+                          title={isSaved ? "Remove from saved" : "Save for later"}
+                        >
+                          {isSaved ? (
+                            <BookmarkCheck className="h-4 w-4" />
+                          ) : (
+                            <Bookmark className="h-4 w-4" />
+                          )}
+                        </button>
+                        <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                      </div>
+                    </div>
+                    <h3 className="font-display font-semibold mb-2 group-hover:text-primary transition-colors">
+                      {resource.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground">{resource.description}</p>
+                  </motion.a>
+                );
+              })}
             </div>
           )}
 

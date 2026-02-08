@@ -59,6 +59,12 @@ export const useProgressSync = () => {
                 ...local.favoritePrompts,
               ]),
             ],
+            savedResources: [
+              ...new Set([
+                ...((data as any).saved_resources ?? []),
+                ...local.savedResources,
+              ]),
+            ],
           };
 
           useAppStore.setState({ user: merged });
@@ -72,6 +78,7 @@ export const useProgressSync = () => {
             completedLessons: data.completed_lessons ?? [],
             completedQuizzes: data.completed_quizzes ?? [],
             favoritePrompts: data.favorite_prompts ?? [],
+            savedResources: (data as any).saved_resources ?? [],
           });
           if (JSON.stringify(merged) !== dbJson) {
             await upsertProgress(user.id, merged);
@@ -125,6 +132,7 @@ async function upsertProgress(
     completedLessons: string[];
     completedQuizzes: string[];
     favoritePrompts: string[];
+    savedResources: string[];
   }
 ) {
   const { error } = await supabase.from("user_progress").upsert(
@@ -136,7 +144,8 @@ async function upsertProgress(
       completed_lessons: profile.completedLessons,
       completed_quizzes: profile.completedQuizzes,
       favorite_prompts: profile.favoritePrompts,
-    },
+      saved_resources: profile.savedResources,
+    } as any,
     { onConflict: "user_id" }
   );
 
