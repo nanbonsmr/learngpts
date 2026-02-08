@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { categories } from "@/data/content";
 import { useAppStore } from "@/store/useAppStore";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight, CheckCircle, Copy, BookOpen, Lightbulb, MessageSquare } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle, Copy, BookOpen, Lightbulb, MessageSquare, BarChart3, FileText } from "lucide-react";
 import { toast } from "sonner";
 
 const LessonPage = () => {
@@ -76,8 +76,63 @@ const LessonPage = () => {
               <BookOpen className="h-5 w-5 text-primary" />
               <h2 className="font-display font-semibold text-lg">Explanation</h2>
             </div>
-            <p className="text-muted-foreground leading-relaxed">{lesson.description}</p>
+            <div className="text-muted-foreground leading-relaxed whitespace-pre-line">{lesson.description}</div>
           </motion.div>
+
+          {/* Real Data & Statistics */}
+          {lesson.realData && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15 }}
+              className="glass-card rounded-2xl p-6 md:p-8 mb-6 border-2 border-blue-500/20"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <BarChart3 className="h-5 w-5 text-blue-500" />
+                <h2 className="font-display font-semibold text-lg">📊 {lesson.realData.title}</h2>
+              </div>
+              <ul className="space-y-3">
+                {lesson.realData.points.map((point, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="h-6 w-6 rounded-full bg-blue-500/10 text-blue-500 flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">
+                      {i + 1}
+                    </span>
+                    <span className="text-sm text-muted-foreground leading-relaxed">{point}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-xs text-muted-foreground/60 mt-4 italic">Source: {lesson.realData.source}</p>
+            </motion.div>
+          )}
+
+          {/* Case Study */}
+          {lesson.caseStudy && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.18 }}
+              className="glass-card rounded-2xl p-6 md:p-8 mb-6 border-2 border-amber-500/20"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <FileText className="h-5 w-5 text-amber-500" />
+                <h2 className="font-display font-semibold text-lg">📋 Case Study: {lesson.caseStudy.title}</h2>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <p className="text-xs font-semibold text-amber-500 uppercase tracking-wider mb-1">Scenario</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{lesson.caseStudy.scenario}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-1">Result</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{lesson.caseStudy.result}</p>
+                </div>
+                <div className="bg-amber-500/5 rounded-xl p-4 border border-amber-500/10">
+                  <p className="text-xs font-semibold text-foreground uppercase tracking-wider mb-1">💡 Key Takeaway</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{lesson.caseStudy.keyTakeaway}</p>
+                </div>
+              </div>
+            </motion.div>
+          )}
 
           {/* Example Prompt */}
           <motion.div
