@@ -44,6 +44,11 @@ const module1: Category = {
         result: "Within 3 months, the firm reduced routine drafting time by 62% (from 15 to 5.7 hours/week). Client email response time improved from 48 hours to 12 hours. Importantly, all AI-generated content was reviewed by a qualified attorney before sending — ChatGPT was the first draft, never the final word.",
         keyTakeaway: "AI doesn't replace expertise — it accelerates it. The firm's lawyers used ChatGPT as a first-draft tool, applying their legal judgment to refine outputs. The time saved was redirected to higher-value client work, resulting in a 23% increase in billable hours.",
       },
+      suggestedPrompts: [
+        { title: "Compare AI Models", prompt: "Compare ChatGPT, Claude, and Gemini in a table. Include: pricing, strengths, weaknesses, best use cases, and model sizes." },
+        { title: "AI Limitations Checker", prompt: "I'm about to use ChatGPT for [task]. What are the potential risks, limitations, and things I should fact-check in the output?" },
+        { title: "Explain Like I'm 5", prompt: "Explain [complex concept] in the simplest possible terms. Use a real-world analogy a child would understand." },
+      ],
     },
     {
       id: "1-2-setting-up",
@@ -75,6 +80,10 @@ const module1: Category = {
         result: "Student satisfaction scores for the course increased from 3.8/5 to 4.5/5. Students who used the configured ChatGPT as a study aid performed 18% better on final exams compared to the control group. Office hours attendance actually increased — students came with better questions after exploring concepts with AI first.",
         keyTakeaway: "Custom instructions transform ChatGPT from a general tool into a specialized assistant. By defining the role, boundaries, and response style upfront, you ensure consistent, high-quality interactions without re-explaining context every time.",
       },
+      suggestedPrompts: [
+        { title: "Custom Instructions Template", prompt: "I'm a [profession] in [industry]. I prefer [communication style] responses. Generate the perfect custom instructions for my ChatGPT account." },
+        { title: "Settings Optimizer", prompt: "What are the top 10 ChatGPT settings most users don't know about? Explain each and whether I should enable/disable it." },
+      ],
     },
     {
       id: "1-3-first-prompt",
@@ -106,6 +115,11 @@ const module1: Category = {
         result: "Maria's article was published in the Columbia Journalism Review and won the student journalism award. Her professor noted that the article's research depth exceeded what students typically achieve. Maria spent 60% less time on initial research, freeing time for original interviews and analysis. She clearly disclosed AI use in her methodology.",
         keyTakeaway: "Specific prompts turn ChatGPT from a vague chatbot into a powerful research assistant. The key difference was Maria's prompts: she specified the exact data she needed, the format, the time range, and the specific metrics — transforming general knowledge into structured, usable research data.",
       },
+      suggestedPrompts: [
+        { title: "Prompt Quality Tester", prompt: "Take this vague prompt and rewrite it in 3 levels of specificity (basic, good, excellent). Show how each produces better results:\n\nOriginal: [paste vague prompt]" },
+        { title: "Summary Generator", prompt: "Summarize this text in 3 formats: 1) 5 bullet points, 2) A 50-word paragraph, 3) A tweet (under 280 chars). Focus on key facts and actionable insights:\n\n[paste text]" },
+        { title: "Idea Brainstormer", prompt: "Generate 20 creative ideas for [topic]. Organize them into 4 categories: Quick Wins, High Impact, Creative/Unusual, and Long-term Investments. Rate each idea's feasibility (1-5)." },
+      ],
     },
   ],
   quiz: [

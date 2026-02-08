@@ -13,6 +13,11 @@ export interface RealData {
   source: string;
 }
 
+export interface SuggestedPrompt {
+  title: string;
+  prompt: string;
+}
+
 export interface Lesson {
   id: string;
   title: string;
@@ -22,6 +27,7 @@ export interface Lesson {
   practiceTask: string;
   duration: string;
   image?: string;
+  suggestedPrompts?: SuggestedPrompt[];
   caseStudy?: CaseStudy;
   realData?: RealData;
 }

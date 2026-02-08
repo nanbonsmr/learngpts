@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { categories } from "@/data/content";
+import { lessonSuggestedPrompts } from "@/data/suggestedPrompts";
 import { useAppStore } from "@/store/useAppStore";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight, CheckCircle, Copy, BookOpen, Lightbulb, MessageSquare, BarChart3, FileText } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle, Copy, BookOpen, Lightbulb, MessageSquare, BarChart3, FileText, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 
 const LessonPage = () => {
@@ -192,6 +193,47 @@ const LessonPage = () => {
               {lesson.exampleOutput}
             </div>
           </motion.div>
+
+          {/* Suggested Prompts */}
+          {(() => {
+            const prompts = lesson.suggestedPrompts || lessonSuggestedPrompts[lesson.id];
+            if (!prompts || prompts.length === 0) return null;
+            return (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35 }}
+                className="glass-card rounded-2xl p-6 md:p-8 mb-6 border-2 border-accent/20"
+              >
+                <div className="flex items-center gap-2 mb-5">
+                  <Sparkles className="h-5 w-5 text-accent" />
+                  <h2 className="font-display font-semibold text-lg">Try These Prompts</h2>
+                </div>
+                <div className="space-y-3">
+                  {prompts.map((sp, i) => (
+                    <div
+                      key={i}
+                      className="bg-secondary/50 rounded-xl p-4 group hover:bg-secondary/80 transition-colors"
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <h4 className="font-display font-semibold text-sm text-foreground">{sp.title}</h4>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => copyToClipboard(sp.prompt)}
+                          className="opacity-60 group-hover:opacity-100 transition-opacity h-7 px-2"
+                        >
+                          <Copy className="h-3 w-3 mr-1" />
+                          Copy
+                        </Button>
+                      </div>
+                      <p className="text-xs text-muted-foreground font-mono leading-relaxed whitespace-pre-line">{sp.prompt}</p>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            );
+          })()}
 
           {/* Practice Task */}
           <motion.div
