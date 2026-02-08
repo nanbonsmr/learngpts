@@ -9,7 +9,7 @@ import logo from "@/assets/logo.png";
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { user, signOut } = useAuth();
+  const { user, signOut, displayName } = useAuth();
   const { theme, setTheme } = useTheme();
   const location = useLocation();
 
@@ -81,7 +81,7 @@ const Navbar = () => {
             <>
               <Button variant="ghost" size="sm" asChild className="rounded-lg">
                 <Link to="/profile" className="truncate max-w-[160px]">
-                  {user.email}
+                  {displayName || user.email?.split("@")[0] || "Profile"}
                 </Link>
               </Button>
               <Button variant="ghost" size="sm" onClick={handleSignOut} className="rounded-lg">
