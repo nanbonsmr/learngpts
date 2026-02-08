@@ -4,6 +4,8 @@ import lesson31Image from "@/assets/lessons/lesson-3-1-email.jpg";
 import lesson32Image from "@/assets/lessons/lesson-3-2-research.jpg";
 import lesson33Image from "@/assets/lessons/lesson-3-3-marketing.jpg";
 import lesson34Image from "@/assets/lessons/lesson-3-4-automation.jpg";
+import content31Email from "@/assets/lessons/content/content-3-1-email.jpg";
+import content32Research from "@/assets/lessons/content/content-3-2-research.jpg";
 import type { Category } from "./types";
 
 const module3: Category = {
@@ -19,6 +21,9 @@ const module3: Category = {
       id: "3-1-email-communication",
       title: "Lesson 3.1 – Email and Communication",
       image: lesson31Image,
+      contentImages: [
+        { src: content31Email, alt: "Professional email communication workflow with AI assistance", caption: "AI-powered email workflow: draft, refine, and send professional communications faster" },
+      ],
       description:
         "Email is the backbone of business communication — the average professional sends 40+ emails daily and spends 28% of their workweek on email (McKinsey). ChatGPT can dramatically reduce this time while improving quality.\n\n**Types of business emails ChatGPT excels at:**\n• **Cold outreach** — First-contact emails to prospects. Key: personalization, social proof, clear CTA.\n• **Follow-ups** — After meetings, proposals, or no-response situations. Key: value reinforcement, urgency without pressure.\n• **Client updates** — Project status, milestone celebrations, change notifications. Key: transparency, structured information.\n• **Internal communications** — Team announcements, policy changes, project kickoffs. Key: clarity, action items.\n• **Negotiation emails** — Pricing discussions, scope changes, contract terms. Key: firmness balanced with empathy.\n• **Apology/crisis emails** — Service disruptions, mistakes, delays. Key: accountability, solution-focused.\n\n**Email Writing Best Practices:**\n1. Always specify recipient, context, relationship, and desired tone.\n2. Request subject line suggestions — 47% of emails are opened based on subject line alone (OptinMonster).\n3. Keep emails concise — specify word limits (80-150 words ideal for business).\n4. Include a single, clear call-to-action.\n5. Ask ChatGPT to write 2-3 variations for A/B testing.\n\n**Advanced Email Techniques:**\n• **The AIDA Framework** — Attention, Interest, Desire, Action. Great for sales emails.\n• **The PAS Framework** — Problem, Agitate, Solution. Great for outreach.\n• **The BAB Framework** — Before, After, Bridge. Great for case study emails.",
       examplePrompt:
@@ -50,6 +55,9 @@ const module3: Category = {
       id: "3-2-market-research",
       title: "Lesson 3.2 – Market Research & Planning",
       image: lesson32Image,
+      contentImages: [
+        { src: content32Research, alt: "Market research and SWOT analysis dashboard", caption: "AI-assisted market research: SWOT analysis, competitor comparison, and trend identification" },
+      ],
       description:
         "ChatGPT is a powerful brainstorming and research partner. While it shouldn't replace primary data, it excels at synthesizing information, identifying patterns, and creating structured analysis frameworks.\n\n**What ChatGPT Can Do for Market Research:**\n• **Industry overviews** — Quick summaries of market size, growth rates, key players.\n• **Trend identification** — Spotting emerging patterns from public knowledge.\n• **SWOT analysis** — Structured Strengths, Weaknesses, Opportunities, Threats.\n• **Competitive analysis** — Feature comparison matrices, positioning maps.\n• **Customer personas** — Detailed buyer profiles with demographics and psychographics.\n• **Business model evaluation** — Revenue model analysis, unit economics estimation.\n\n**The Research Workflow:**\n1. Start broad: \"Give me an overview of the [industry] market.\"\n2. Go deep: \"Now analyze the top 5 competitors in this space.\"\n3. Get specific: \"Create a SWOT analysis for my specific business idea.\"\n4. Validate: \"What are the biggest risks? What could go wrong?\"\n5. Act: \"Based on this analysis, suggest 3 actionable next steps.\"\n\n**Critical Warning:** Always verify ChatGPT's market data with real sources (Statista, IBISWorld, industry reports). ChatGPT may generate plausible-sounding but fabricated statistics. Use it for structure and ideation, then validate with primary research.\n\n**Power Move — The \"Pre-Mortem\" Technique:**\nAsk ChatGPT: \"Imagine my business has failed in 12 months. What were the 5 most likely reasons?\" This surfaces risks you might not consider in optimistic planning.",
       examplePrompt:

@@ -8,6 +8,7 @@ import { useAppStore } from "@/store/useAppStore";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, CheckCircle, Copy, BookOpen, Lightbulb, MessageSquare, BarChart3, FileText, Sparkles } from "lucide-react";
 import { toast } from "sonner";
+import LessonContentImage from "@/components/lesson/LessonContentImage";
 
 const LessonPage = () => {
   const { categoryId, lessonId } = useParams();
@@ -93,7 +94,31 @@ const LessonPage = () => {
               <BookOpen className="h-5 w-5 text-primary" />
               <h2 className="font-display font-semibold text-lg">Explanation</h2>
             </div>
-            <div className="text-muted-foreground leading-relaxed whitespace-pre-line">{lesson.description}</div>
+            {(() => {
+              const paragraphs = lesson.description.split("\n\n");
+              const contentImages = lesson.contentImages || [];
+              // Insert images after the 2nd paragraph (index 1)
+              const insertAfterIndex = Math.min(1, paragraphs.length - 1);
+              
+              return (
+                <div className="text-muted-foreground leading-relaxed">
+                  {paragraphs.map((paragraph, idx) => (
+                    <div key={idx}>
+                      <p className="whitespace-pre-line mb-4">{paragraph}</p>
+                      {idx === insertAfterIndex && contentImages.map((img, imgIdx) => (
+                        <LessonContentImage
+                          key={imgIdx}
+                          src={img.src}
+                          alt={img.alt}
+                          caption={img.caption}
+                          index={imgIdx}
+                        />
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              );
+            })()}
           </motion.div>
 
           {/* Real Data & Statistics */}

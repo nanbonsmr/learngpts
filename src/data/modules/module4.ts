@@ -3,6 +3,7 @@ import module4Image from "@/assets/module-4-freelancing.jpg";
 import lesson41Image from "@/assets/lessons/lesson-4-1-proposals.jpg";
 import lesson42Image from "@/assets/lessons/lesson-4-2-blog-social.jpg";
 import lesson43Image from "@/assets/lessons/lesson-4-3-editing.jpg";
+import content41Proposals from "@/assets/lessons/content/content-4-1-proposals.jpg";
 import type { Category } from "./types";
 
 const module4: Category = {
@@ -18,6 +19,9 @@ const module4: Category = {
       id: "4-1-proposals",
       title: "Lesson 4.1 – Proposals & Client Communication",
       image: lesson41Image,
+      contentImages: [
+        { src: content41Proposals, alt: "Freelance proposal checklist with structured sections", caption: "A winning proposal follows a structured checklist: greeting, understanding, approach, deliverables, and pricing" },
+      ],
       description:
         "Winning freelance work starts with compelling proposals. The freelance economy represents $1.57 trillion in the US alone, with 73.3 million freelancers — competition is fierce.\n\n**Proposal Writing with ChatGPT:**\n• Customize proposals for each client's specific needs and language.\n• Highlight relevant experience with quantified results.\n• Include clear deliverables, phased timeline, and transparent pricing.\n• Mirror the client's tone and terminology from their job post.\n\n**The Winning Proposal Structure:**\n1. **Personalized greeting** — Reference their specific project or company.\n2. **Understanding statement** — Prove you read their brief (\"I see you need X because Y\").\n3. **Your approach** — 3-4 phases with brief descriptions.\n4. **Deliverables list** — Exact items they'll receive.\n5. **Timeline** — Realistic with milestones.\n6. **Investment** — Frame as investment, not cost. Include payment terms.\n7. **Social proof** — Relevant results, testimonials, portfolio links.\n8. **Next steps** — Clear, low-friction CTA.\n\n**Service Descriptions:**\nCreate clear, benefit-focused descriptions with tiered packages (Basic/Standard/Premium). Tiered pricing increases average deal size by 30% (pricing psychology research).\n\n**Pricing Communication:**\n• Lead with value before revealing price.\n• Handle discount requests by adjusting scope, not rate.\n• Use anchoring — present premium option first.\n\n**Client Onboarding:**\nAutomate welcome sequences: questionnaires, kickoff agendas, expectation-setting messages.",
       examplePrompt:

@@ -3,6 +3,7 @@ import module5Image from "@/assets/module-5-coding.jpg";
 import lesson51Image from "@/assets/lessons/lesson-5-1-code.jpg";
 import lesson52Image from "@/assets/lessons/lesson-5-2-debug.jpg";
 import lesson53Image from "@/assets/lessons/lesson-5-3-api.jpg";
+import content51Code from "@/assets/lessons/content/content-5-1-code.jpg";
 import type { Category } from "./types";
 
 const module5: Category = {
@@ -18,6 +19,9 @@ const module5: Category = {
       id: "5-1-writing-code",
       title: "Lesson 5.1 – Writing Code",
       image: lesson51Image,
+      contentImages: [
+        { src: content51Code, alt: "Code editor IDE with React and TypeScript code", caption: "AI-assisted coding: generate, review, and debug code directly in your IDE" },
+      ],
       description:
         "ChatGPT can generate code in virtually any programming language. GitHub reports that developers using AI coding assistants are 55% more productive and complete tasks 55% faster.\n\n**Specify Clearly for Best Results:**\n• Programming language, framework, and version.\n• Input/output specifications and data types.\n• Error handling and edge case requirements.\n• Style preferences (functional vs OOP, naming conventions).\n• Testing requirements (unit tests, integration tests).\n\n**Types of Code Generation:**\n• Full components, hooks, and modules\n• Boilerplate and starter templates\n• Algorithm implementations with complexity analysis\n• Database queries (SQL, NoSQL, ORMs)\n• Configuration files (Docker, CI/CD, env)\n• Test suites with coverage targets\n• API endpoints with validation\n\n**The Code Generation Workflow:**\n1. Describe the requirement in plain English\n2. Specify language, framework, and constraints\n3. Review the generated code (NEVER blindly copy-paste)\n4. Ask for explanations of complex parts\n5. Request error handling and edge cases\n6. Ask for unit tests\n\n**Best Practices:**\n1. Always review generated code before using it — AI can introduce subtle bugs.\n2. Ask for TypeScript types and interfaces upfront.\n3. Request comments for complex logic.\n4. Ask for performance considerations.\n5. Use it for first drafts, then refine with your domain knowledge.",
       examplePrompt:

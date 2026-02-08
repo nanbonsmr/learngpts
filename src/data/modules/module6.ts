@@ -3,6 +3,7 @@ import module6Image from "@/assets/module-6-productivity.jpg";
 import lesson61Image from "@/assets/lessons/lesson-6-1-planning.jpg";
 import lesson62Image from "@/assets/lessons/lesson-6-2-study.jpg";
 import lesson63Image from "@/assets/lessons/lesson-6-3-resume.jpg";
+import content61Planning from "@/assets/lessons/content/content-6-1-planning.jpg";
 import type { Category } from "./types";
 
 const module6: Category = {
@@ -18,6 +19,9 @@ const module6: Category = {
       id: "6-1-task-planning",
       title: "Lesson 6.1 – Task Planning & Time Management",
       image: lesson61Image,
+      contentImages: [
+        { src: content61Planning, alt: "Daily planning calendar with time blocks and productivity dashboard", caption: "Time blocking and task prioritization: the foundation of AI-assisted daily planning" },
+      ],
       description:
         "ChatGPT can be your personal productivity coach. The average person wastes 2.1 hours/day on context switching and poor planning (Asana). AI-assisted planning can reclaim this time.\n\n**Daily Planning Methods:**\n• **Eisenhower Matrix** — Sort tasks by Urgent/Important to focus on what matters.\n• **Pomodoro Technique** — 25 min focused work + 5 min break, repeat 4x then take 15 min.\n• **Eat the Frog** — Do the hardest, most impactful task first when energy is highest.\n• **Time Blocking** — Dedicate specific hours to specific types of work.\n• **2-Minute Rule** — If it takes less than 2 minutes, do it immediately.\n\n**The Morning Briefing Prompt:**\nBuild a prompt you run every morning: \"Here are my tasks, meetings, and deadlines for today: [list]. Create a time-blocked schedule starting at [time]. Use the [method] approach. Include: energy-appropriate task ordering, buffer time between meetings, and identify which tasks I should delegate or eliminate.\"\n\n**Weekly & Monthly Planning:**\n• Set SMART goals (Specific, Measurable, Achievable, Relevant, Time-bound).\n• Break quarterly goals into weekly milestones.\n• Create habit trackers and accountability frameworks.\n• Build routines for high-energy mornings and wind-down evenings.\n\n**The Compound Effect of AI Planning:**\nSaving 30 minutes/day = 182.5 hours/year = 22+ full working days. At $40/hour, that's $7,300/year in reclaimed productivity per person.",
       examplePrompt:

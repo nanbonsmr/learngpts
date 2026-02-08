@@ -4,6 +4,7 @@ import lesson21Image from "@/assets/lessons/lesson-2-1-anatomy.jpg";
 import lesson22Image from "@/assets/lessons/lesson-2-2-templates.jpg";
 import lesson23Image from "@/assets/lessons/lesson-2-3-bad-prompts.jpg";
 import lesson24Image from "@/assets/lessons/lesson-2-4-advanced.jpg";
+import content21Anatomy from "@/assets/lessons/content/content-2-1-anatomy.jpg";
 import type { Category } from "./types";
 
 const module2: Category = {
@@ -19,6 +20,9 @@ const module2: Category = {
       id: "2-1-anatomy",
       title: "Lesson 2.1 – Anatomy of a Good Prompt",
       image: lesson21Image,
+      contentImages: [
+        { src: content21Anatomy, alt: "The C-R-T-F-C framework for structuring effective AI prompts", caption: "The C-R-T-F-C Framework: Context, Role, Task, Format, Constraints — the recipe for perfect prompts" },
+      ],
       description:
         "Every great prompt follows a structure. Think of it as a recipe — you need the right ingredients in the right proportions.\n\n**The C-R-T-F-C Framework:**\n1. **Context** — Background information (\"I run a small bakery in Austin with 3 employees and $50K/month revenue\")\n2. **Role** — Who should ChatGPT act as (\"Act as a senior marketing consultant with 15 years in food & beverage\")\n3. **Task** — What you want done (\"Create a 30-day Instagram content calendar\")\n4. **Format** — How you want the output (\"Use a table with columns for date, post type, caption, hashtags\")\n5. **Constraints** — Limitations (\"Keep captions under 150 characters, use casual tone, budget: $500/month\")\n\n**Why Structure Matters — The Data:**\nPrompts using all 5 C-R-T-F-C elements produce outputs that users rate 3.2x more useful than unstructured prompts (based on internal prompt engineering research at leading AI labs).\n\n**Role-based prompts** (\"Act as…\") are perhaps the most powerful technique. When you tell ChatGPT to \"act as a senior data scientist,\" the model draws from patterns associated with expert-level technical communication. The output becomes more precise, uses domain-specific terminology, and considers edge cases.\n\n**Common Framework Mistakes:**\n• Providing context but no format → you get a wall of text\n• Setting a role but no constraints → output may be too long or wrong tone\n• Giving a task without context → ChatGPT makes assumptions that may be wrong\n\n**Pro Tip:** Save your best prompts in a \"prompt journal\" — a simple document where you store templates that worked well.",
       examplePrompt:
