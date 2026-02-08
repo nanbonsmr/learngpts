@@ -22,6 +22,14 @@ export interface Lesson {
   duration: string;
 }
 
+export interface QuizQuestion {
+  id: string;
+  question: string;
+  options: string[];
+  correctIndex: number;
+  explanation: string;
+}
+
 export interface Category {
   id: string;
   title: string;
@@ -31,6 +39,7 @@ export interface Category {
   image: string;
   level: string;
   lessons: Lesson[];
+  quiz: QuizQuestion[];
 }
 
 // ──────────────────────────────────────────────
@@ -83,6 +92,68 @@ const module1: Category = {
       practiceTask:
         "Find any news article online. Copy-paste it into ChatGPT with this prompt: \"Summarize this article in 5 bullet points, then explain why it matters in one sentence.\" Compare the summary with the original.",
       duration: "7 min",
+    },
+  ],
+  quiz: [
+    {
+      id: "q1-1",
+      question: "What does ChatGPT stand for in terms of technology?",
+      options: [
+        "A search engine that finds answers on the web",
+        "A Large Language Model that predicts the next word in a sequence",
+        "A database of pre-written answers to common questions",
+        "An image generation tool powered by neural networks",
+      ],
+      correctIndex: 1,
+      explanation: "ChatGPT is a Large Language Model (LLM) trained on text data. It generates responses by predicting the most probable next word in a sequence.",
+    },
+    {
+      id: "q1-2",
+      question: "Which of the following is a known limitation of ChatGPT?",
+      options: [
+        "It can browse the internet in real-time on the free plan",
+        "It never makes mistakes in its responses",
+        "It can confidently state incorrect facts (hallucinations)",
+        "It understands emotions and feelings deeply",
+      ],
+      correctIndex: 2,
+      explanation: "Hallucination is a well-known limitation — ChatGPT can generate confident-sounding but factually incorrect information.",
+    },
+    {
+      id: "q1-3",
+      question: "What is a 'prompt' in the context of ChatGPT?",
+      options: [
+        "A notification ChatGPT sends to your email",
+        "Any text you type into ChatGPT to get a response",
+        "A paid feature for advanced users only",
+        "A template that ChatGPT uses internally",
+      ],
+      correctIndex: 1,
+      explanation: "A prompt is simply any text you type into ChatGPT. The quality of your prompt directly determines the quality of the response.",
+    },
+    {
+      id: "q1-4",
+      question: "Which is the BEST prompt for getting a useful response?",
+      options: [
+        "Tell me about dogs",
+        "Write something",
+        "List 5 best dog breeds for apartment living with pros and cons",
+        "Help me please",
+      ],
+      correctIndex: 2,
+      explanation: "Specific prompts with clear context, format, and constraints produce far better results than vague requests.",
+    },
+    {
+      id: "q1-5",
+      question: "What does ChatGPT Plus ($20/mo) offer over the free version?",
+      options: [
+        "Access to GPT-4/4o, image generation, web browsing, and plugins",
+        "Only faster response times, nothing else",
+        "The ability to make phone calls through AI",
+        "A built-in email client",
+      ],
+      correctIndex: 0,
+      explanation: "ChatGPT Plus provides access to GPT-4/4o, DALL·E image generation, web browsing capabilities, and plugin support.",
     },
   ],
 };
@@ -152,6 +223,63 @@ const module2: Category = {
       duration: "10 min",
     },
   ],
+  quiz: [
+    {
+      id: "q2-1",
+      question: "What does the 'R' stand for in the C-R-T-F-C Framework?",
+      options: ["Results", "Role", "Review", "Reference"],
+      correctIndex: 1,
+      explanation: "R stands for Role — defining who ChatGPT should act as (e.g., 'Act as a senior marketing consultant') to set expertise level and perspective.",
+    },
+    {
+      id: "q2-2",
+      question: "What is 'chain-of-thought' prompting?",
+      options: [
+        "Linking multiple ChatGPT accounts together",
+        "Asking ChatGPT to think step by step before giving a final answer",
+        "Sending the same prompt multiple times",
+        "Using ChatGPT to generate blockchain code",
+      ],
+      correctIndex: 1,
+      explanation: "Chain-of-thought prompting asks ChatGPT to reason step by step, which dramatically improves accuracy for complex tasks.",
+    },
+    {
+      id: "q2-3",
+      question: "What is the biggest problem with the prompt: 'Tell me about marketing'?",
+      options: [
+        "It's too short to process",
+        "It uses incorrect grammar",
+        "It's too vague — no aspect, audience, or depth specified",
+        "ChatGPT can't discuss marketing topics",
+      ],
+      correctIndex: 2,
+      explanation: "The prompt lacks specificity. A better version would specify the type of marketing, target audience, budget, and desired output format.",
+    },
+    {
+      id: "q2-4",
+      question: "What is 'few-shot prompting'?",
+      options: [
+        "Giving ChatGPT only a few words to work with",
+        "Providing examples of the output you want, then asking for more in the same style",
+        "Using ChatGPT for only a few minutes at a time",
+        "A technique for generating images only",
+      ],
+      correctIndex: 1,
+      explanation: "Few-shot prompting means providing one or more examples of the desired output format/style, so ChatGPT can produce consistent results.",
+    },
+    {
+      id: "q2-5",
+      question: "Why are prompt templates useful?",
+      options: [
+        "They replace the need to learn prompting skills",
+        "They save time and ensure consistent quality for recurring tasks",
+        "They are required to use ChatGPT Plus",
+        "They automatically make any prompt perfect",
+      ],
+      correctIndex: 1,
+      explanation: "Templates are reusable prompt structures that save time and ensure consistent, high-quality outputs for tasks you do regularly.",
+    },
+  ],
 };
 
 // ──────────────────────────────────────────────
@@ -219,6 +347,68 @@ const module3: Category = {
       duration: "7 min",
     },
   ],
+  quiz: [
+    {
+      id: "q3-1",
+      question: "What is the most important thing to specify when asking ChatGPT to write a professional email?",
+      options: [
+        "The font size to use",
+        "The recipient, context, tone, and desired outcome",
+        "The color scheme for the email",
+        "The email client you're using",
+      ],
+      correctIndex: 1,
+      explanation: "Specifying the recipient, context, tone, and desired outcome ensures ChatGPT produces a relevant, professional email tailored to your needs.",
+    },
+    {
+      id: "q3-2",
+      question: "Why should you verify ChatGPT's market research data with real sources?",
+      options: [
+        "ChatGPT always provides outdated information",
+        "ChatGPT can generate plausible but potentially inaccurate data (hallucinations)",
+        "Market research is not ChatGPT's primary function",
+        "Real sources are always free to access",
+      ],
+      correctIndex: 1,
+      explanation: "ChatGPT can hallucinate statistics and data. It's excellent for structure and ideation, but market data should always be verified with real sources.",
+    },
+    {
+      id: "q3-3",
+      question: "What does 'leading with benefits, not features' mean in marketing copy?",
+      options: [
+        "Listing technical specifications first",
+        "Describing how the product improves the customer's life rather than what it does technically",
+        "Always mentioning the price first",
+        "Using the longest possible descriptions",
+      ],
+      correctIndex: 1,
+      explanation: "Benefits describe the positive impact on the customer (e.g., 'save 3 hours/day'), while features describe what the product does technically (e.g., 'has auto-sync').",
+    },
+    {
+      id: "q3-4",
+      question: "What is a good use of ChatGPT for workflow automation?",
+      options: [
+        "Replacing your entire team with AI",
+        "Turning rough meeting notes into structured summaries with action items",
+        "Automatically sending emails without human review",
+        "Making all business decisions",
+      ],
+      correctIndex: 1,
+      explanation: "ChatGPT excels at structuring and summarizing information, like converting rough meeting notes into organized summaries with action items, owners, and deadlines.",
+    },
+    {
+      id: "q3-5",
+      question: "What is the SWOT framework used for?",
+      options: [
+        "Writing social media posts",
+        "Analyzing Strengths, Weaknesses, Opportunities, and Threats of a business",
+        "Creating email templates",
+        "Debugging code errors",
+      ],
+      correctIndex: 1,
+      explanation: "SWOT stands for Strengths, Weaknesses, Opportunities, and Threats — a strategic planning framework for analyzing a business or project.",
+    },
+  ],
 };
 
 // ──────────────────────────────────────────────
@@ -271,6 +461,68 @@ const module4: Category = {
       practiceTask:
         "Take a piece of your own writing (email, blog draft, social post). Ask ChatGPT to: 1) fix grammar, 2) rewrite for a different audience, 3) make it half the length, 4) make it twice as detailed.",
       duration: "7 min",
+    },
+  ],
+  quiz: [
+    {
+      id: "q4-1",
+      question: "What should a strong freelance proposal include?",
+      options: [
+        "Just the price and your name",
+        "Personalized greeting, understanding of needs, approach, deliverables, timeline, and pricing",
+        "A generic template sent to all clients",
+        "Only your portfolio link",
+      ],
+      correctIndex: 1,
+      explanation: "A compelling proposal should be personalized and include: understanding of the client's needs, your approach, clear deliverables, timeline, pricing, and social proof.",
+    },
+    {
+      id: "q4-2",
+      question: "Why should content be tailored differently for Instagram vs LinkedIn?",
+      options: [
+        "They use different programming languages",
+        "Each platform has different audience expectations, formats, and tones",
+        "Instagram doesn't support text",
+        "LinkedIn only allows video content",
+      ],
+      correctIndex: 1,
+      explanation: "Each platform has a unique audience and content format — Instagram favors visual, casual content while LinkedIn expects professional, insightful posts.",
+    },
+    {
+      id: "q4-3",
+      question: "What should you always tell ChatGPT when asking it to edit your writing?",
+      options: [
+        "Make it longer",
+        "Preserve my original meaning",
+        "Use as many adjectives as possible",
+        "Write in a different language",
+      ],
+      correctIndex: 1,
+      explanation: "Saying 'preserve my original meaning' prevents ChatGPT from changing your message while it improves grammar, style, or tone.",
+    },
+    {
+      id: "q4-4",
+      question: "What is content repurposing?",
+      options: [
+        "Deleting old content",
+        "Transforming one piece of content into multiple formats (blog → social → email → video)",
+        "Copying someone else's content",
+        "Only posting content once",
+      ],
+      correctIndex: 1,
+      explanation: "Content repurposing means adapting one piece of content into multiple formats for different platforms, maximizing reach and efficiency.",
+    },
+    {
+      id: "q4-5",
+      question: "What is SEO-friendly content?",
+      options: [
+        "Content with the most images",
+        "Content optimized with keywords, structure, and metadata to rank in search engines",
+        "Content that is very short",
+        "Content written entirely in uppercase",
+      ],
+      correctIndex: 1,
+      explanation: "SEO-friendly content uses relevant keywords, proper heading structure, meta descriptions, and engaging writing to rank higher in search engine results.",
     },
   ],
 };
@@ -327,6 +579,68 @@ const module5: Category = {
       duration: "10 min",
     },
   ],
+  quiz: [
+    {
+      id: "q5-1",
+      question: "What should you always do before using code generated by ChatGPT?",
+      options: [
+        "Deploy it immediately to production",
+        "Review and test the code thoroughly",
+        "Delete your existing code first",
+        "Share it publicly without checking",
+      ],
+      correctIndex: 1,
+      explanation: "Always review generated code for correctness, security, and best practices before using it. ChatGPT can produce code with bugs or security issues.",
+    },
+    {
+      id: "q5-2",
+      question: "What information should you include when asking ChatGPT to debug code?",
+      options: [
+        "Just the file name",
+        "The full error message, relevant code, expected vs actual behavior, and tech stack",
+        "Only the line number where the error occurred",
+        "A screenshot of your entire screen",
+      ],
+      correctIndex: 1,
+      explanation: "Including the full error message, relevant code, expected vs actual behavior, and your tech stack gives ChatGPT the context needed for accurate debugging.",
+    },
+    {
+      id: "q5-3",
+      question: "What is a common cause of 'Cannot read properties of undefined' in React?",
+      options: [
+        "Using too many components",
+        "Not initializing state with a default value before rendering",
+        "Having too many CSS classes",
+        "Using TypeScript instead of JavaScript",
+      ],
+      correctIndex: 1,
+      explanation: "This error commonly occurs when state is undefined on the first render. Initializing state with a proper default value (e.g., empty array) prevents this.",
+    },
+    {
+      id: "q5-4",
+      question: "How can ChatGPT help with API integration?",
+      options: [
+        "It can host your API for free",
+        "It can generate fetch code, TypeScript types, error handling, and auth flows for any REST API",
+        "It can replace the need for an API entirely",
+        "It automatically connects to all APIs",
+      ],
+      correctIndex: 1,
+      explanation: "ChatGPT can generate complete API integration code including fetch/axios calls, TypeScript types, authentication, and error handling.",
+    },
+    {
+      id: "q5-5",
+      question: "What is the benefit of asking ChatGPT to explain code 'line by line'?",
+      options: [
+        "It makes the code run faster",
+        "It helps you understand each part of the code and learn from it",
+        "It automatically fixes all errors",
+        "It converts code to a different language",
+      ],
+      correctIndex: 1,
+      explanation: "Line-by-line explanations help you understand what each part does, making you a better programmer rather than just copying code blindly.",
+    },
+  ],
 };
 
 // ──────────────────────────────────────────────
@@ -381,6 +695,68 @@ const module6: Category = {
       duration: "8 min",
     },
   ],
+  quiz: [
+    {
+      id: "q6-1",
+      question: "What is the 'Eat the Frog' productivity method?",
+      options: [
+        "Doing the easiest tasks first",
+        "Tackling the hardest or most important task first thing in the day",
+        "Working without any breaks",
+        "Only doing tasks you enjoy",
+      ],
+      correctIndex: 1,
+      explanation: "'Eat the Frog' means doing your hardest or most dreaded task first. Once it's done, everything else feels easier and your productivity momentum builds.",
+    },
+    {
+      id: "q6-2",
+      question: "How should you use ChatGPT for studying, according to best practices?",
+      options: [
+        "Have it write all your assignments for you",
+        "Use it as a study aid for summaries, flashcards, and practice quizzes",
+        "Copy its answers directly into exams",
+        "Use it to replace attending lectures",
+      ],
+      correctIndex: 1,
+      explanation: "ChatGPT should be used as a study AID — for creating summaries, flashcards, and practice quizzes — not to write assignments. Academic integrity matters.",
+    },
+    {
+      id: "q6-3",
+      question: "What makes a resume bullet point more impactful?",
+      options: [
+        "Using passive voice and vague descriptions",
+        "Using action verbs and quantified results (e.g., 'increased sales by 40%')",
+        "Making it as long as possible",
+        "Listing every technology you've ever used",
+      ],
+      correctIndex: 1,
+      explanation: "Action verbs and quantified results (numbers, percentages, metrics) make resume bullet points stand out and demonstrate real impact.",
+    },
+    {
+      id: "q6-4",
+      question: "What is the Pomodoro Technique?",
+      options: [
+        "A cooking method for Italian dishes",
+        "Working for 25 minutes followed by a 5-minute break, repeated in cycles",
+        "A social media scheduling strategy",
+        "A way to organize emails by color",
+      ],
+      correctIndex: 1,
+      explanation: "The Pomodoro Technique involves focused 25-minute work sessions followed by 5-minute breaks, with a longer break after 4 cycles.",
+    },
+    {
+      id: "q6-5",
+      question: "What is ATS optimization for resumes?",
+      options: [
+        "Making your resume look artistic",
+        "Including keywords that Applicant Tracking Systems scan for to match job descriptions",
+        "Writing your resume in all caps",
+        "Adding your photo to the resume",
+      ],
+      correctIndex: 1,
+      explanation: "ATS (Applicant Tracking System) optimization means including relevant keywords from the job description so automated systems don't filter out your resume.",
+    },
+  ],
 };
 
 // ──────────────────────────────────────────────
@@ -433,6 +809,68 @@ const module7: Category = {
       practiceTask:
         "Design a complete system prompt for an AI assistant in your field. Include personality, knowledge boundaries, conditional logic, and 3 example interactions. Test it as Custom Instructions in ChatGPT.",
       duration: "12 min",
+    },
+  ],
+  quiz: [
+    {
+      id: "q7-1",
+      question: "What is a Custom GPT?",
+      options: [
+        "A cheaper version of ChatGPT",
+        "A personalized ChatGPT with custom instructions, knowledge files, and defined behavior",
+        "A way to use ChatGPT without internet",
+        "A mobile-only version of ChatGPT",
+      ],
+      correctIndex: 1,
+      explanation: "Custom GPTs are personalized versions of ChatGPT with baked-in instructions, uploaded knowledge files, defined behavior, and optional API connections.",
+    },
+    {
+      id: "q7-2",
+      question: "What does Zapier + ChatGPT enable?",
+      options: [
+        "Free access to ChatGPT Plus",
+        "Automated workflows that connect ChatGPT with other tools like email, Slack, and Google Sheets",
+        "Faster internet connection",
+        "Access to ChatGPT's source code",
+      ],
+      correctIndex: 1,
+      explanation: "Zapier connects ChatGPT with hundreds of apps, enabling automated workflows like: new email → ChatGPT summarizes → sends to Slack.",
+    },
+    {
+      id: "q7-3",
+      question: "What is 'meta-prompting'?",
+      options: [
+        "Using ChatGPT on a Meta (Facebook) device",
+        "Asking ChatGPT to write the best possible prompt for a given goal",
+        "Prompting ChatGPT in a different language",
+        "Using multiple ChatGPT accounts simultaneously",
+      ],
+      correctIndex: 1,
+      explanation: "Meta-prompting means asking ChatGPT to generate the optimal prompt for your goal — essentially using AI to write better AI instructions.",
+    },
+    {
+      id: "q7-4",
+      question: "What is conditional logic in prompt design?",
+      options: [
+        "Using if/else programming syntax",
+        "Defining different responses based on different user inputs (If X, respond with Y)",
+        "Only allowing one type of question",
+        "Making prompts shorter",
+      ],
+      correctIndex: 1,
+      explanation: "Conditional logic in prompts means defining different behavior paths: 'If the user asks about billing, collect their email. If they ask about features, answer directly.'",
+    },
+    {
+      id: "q7-5",
+      question: "How can you control ChatGPT's creativity level?",
+      options: [
+        "By changing your internet speed",
+        "By using phrases like 'be creative' or 'be precise and factual, no speculation'",
+        "By paying for a higher plan",
+        "Creativity cannot be controlled",
+      ],
+      correctIndex: 1,
+      explanation: "You can guide creativity through instructions: 'think outside the box' increases creativity, while 'be precise and factual' produces more conservative outputs.",
     },
   ],
 };

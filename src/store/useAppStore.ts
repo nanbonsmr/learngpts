@@ -6,6 +6,7 @@ interface UserProfile {
   level: string | null;
   onboardingComplete: boolean;
   completedLessons: string[];
+  completedQuizzes: string[];
   favoritePrompts: string[];
 }
 
@@ -16,6 +17,7 @@ interface AppState {
   completeOnboarding: () => void;
   completeLesson: (lessonId: string) => void;
   uncompleteLesson: (lessonId: string) => void;
+  completeQuiz: (categoryId: string) => void;
   toggleFavoritePrompt: (promptId: string) => void;
   resetProgress: () => void;
 }
@@ -28,6 +30,7 @@ export const useAppStore = create<AppState>()(
         level: null,
         onboardingComplete: false,
         completedLessons: [],
+        completedQuizzes: [],
         favoritePrompts: [],
       },
       setGoal: (goal) =>
@@ -50,6 +53,13 @@ export const useAppStore = create<AppState>()(
             completedLessons: state.user.completedLessons.filter((id) => id !== lessonId),
           },
         })),
+      completeQuiz: (categoryId) =>
+        set((state) => ({
+          user: {
+            ...state.user,
+            completedQuizzes: [...new Set([...state.user.completedQuizzes, categoryId])],
+          },
+        })),
       toggleFavoritePrompt: (promptId) =>
         set((state) => ({
           user: {
@@ -66,6 +76,7 @@ export const useAppStore = create<AppState>()(
             level: null,
             onboardingComplete: false,
             completedLessons: [],
+            completedQuizzes: [],
             favoritePrompts: [],
           },
         }),

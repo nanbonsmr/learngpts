@@ -6,7 +6,7 @@ import { categories } from "@/data/content";
 import { useAppStore } from "@/store/useAppStore";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight, CheckCircle, Clock } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle, Clock, Trophy } from "lucide-react";
 
 const CategoryDetail = () => {
   const { categoryId } = useParams();
@@ -118,6 +118,50 @@ const CategoryDetail = () => {
               );
             })}
           </div>
+
+          {/* Quiz Section */}
+          {category.quiz && category.quiz.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: category.lessons.length * 0.05 + 0.1 }}
+              className="mt-8"
+            >
+              <Link
+                to={`/quiz/${category.id}`}
+                className={`group flex items-center gap-4 p-6 rounded-xl border-2 transition-all duration-200 ${
+                  user.completedQuizzes?.includes(category.id)
+                    ? "border-accent/40 bg-accent/5 hover:bg-accent/10"
+                    : "border-primary/30 bg-primary/5 hover:bg-primary/10 hover:shadow-lg"
+                }`}
+              >
+                <div
+                  className={`h-12 w-12 rounded-xl flex items-center justify-center shrink-0 ${
+                    user.completedQuizzes?.includes(category.id)
+                      ? "bg-accent/20"
+                      : "bg-primary/20"
+                  }`}
+                >
+                  {user.completedQuizzes?.includes(category.id) ? (
+                    <CheckCircle className="h-6 w-6 text-accent" />
+                  ) : (
+                    <Trophy className="h-6 w-6 text-primary" />
+                  )}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-display font-semibold group-hover:text-primary transition-colors">
+                    📝 Module Quiz
+                  </h3>
+                  <p className="text-sm text-muted-foreground mt-0.5">
+                    {user.completedQuizzes?.includes(category.id)
+                      ? "Quiz completed! Take it again to refresh your knowledge."
+                      : `Test your knowledge with ${category.quiz.length} questions. Score 60% or higher to pass.`}
+                  </p>
+                </div>
+                <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+              </Link>
+            </motion.div>
+          )}
         </div>
       </main>
       <Footer />
