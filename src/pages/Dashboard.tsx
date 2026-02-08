@@ -6,10 +6,12 @@ import { useAppStore } from "@/store/useAppStore";
 import { categories } from "@/data/content";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BookOpen, CheckCircle, Star, Trophy } from "lucide-react";
+import { ArrowRight, BookOpen, CheckCircle, Star, Trophy, Award } from "lucide-react";
+import { useCertificateStatus } from "@/hooks/useCertificateStatus";
 
 const Dashboard = () => {
   const { user } = useAppStore();
+  const { hasCertificate } = useCertificateStatus();
 
   const selectedCategory = categories.find((c) => c.id === user.goal);
   const beginnerCategory = categories.find((c) => c.id === "beginner-basics");
@@ -94,6 +96,37 @@ const Dashboard = () => {
                 </Button>
               </div>
             )}
+
+            {/* Certificate Badge */}
+            {hasCertificate ? (
+              <Link
+                to="/certificate"
+                className="mt-6 flex items-center gap-3 p-4 rounded-xl bg-accent/10 border border-accent/20 hover:bg-accent/15 transition-colors"
+              >
+                <div className="h-10 w-10 rounded-full bg-accent/20 flex items-center justify-center shrink-0">
+                  <Award className="h-5 w-5 text-accent" />
+                </div>
+                <div className="flex-1">
+                  <p className="font-medium text-sm text-accent">🎓 Certified ChatGPT Master</p>
+                  <p className="text-xs text-muted-foreground">You've earned your certificate! Click to view or download.</p>
+                </div>
+                <ArrowRight className="h-4 w-4 text-accent shrink-0" />
+              </Link>
+            ) : overallProgress === 100 ? (
+              <Link
+                to="/certificate"
+                className="mt-6 flex items-center gap-3 p-4 rounded-xl bg-primary/5 border border-primary/10 hover:bg-primary/10 transition-colors"
+              >
+                <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                  <Award className="h-5 w-5 text-primary" />
+                </div>
+                <div className="flex-1">
+                  <p className="font-medium text-sm">All lessons completed!</p>
+                  <p className="text-xs text-muted-foreground">Get your certificate for just $5</p>
+                </div>
+                <ArrowRight className="h-4 w-4 text-primary shrink-0" />
+              </Link>
+            ) : null}
           </motion.div>
 
           {/* Recommended Categories */}
