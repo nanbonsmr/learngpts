@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, MessageCircle, HelpCircle, ArrowRight } from "lucide-react";
+import { Mail, MessageCircle, HelpCircle, Phone, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -8,9 +8,17 @@ const contactOptions = [
     icon: Mail,
     title: "Email Us",
     desc: "Send us an email and we'll get back to you within 24 hours.",
-    action: "support@learngpt.com",
-    href: "mailto:support@learngpt.com",
+    action: "nanbondev@gmail.com",
+    href: "mailto:nanbondev@gmail.com",
     gradient: "from-blue-500 to-cyan-500",
+  },
+  {
+    icon: Phone,
+    title: "Call Us",
+    desc: "Prefer to talk? Give us a call and we'll be happy to help.",
+    action: "+251 976 892 311",
+    href: "tel:+251976892311",
+    gradient: "from-emerald-500 to-green-500",
   },
   {
     icon: MessageCircle,
@@ -54,7 +62,7 @@ const ContactSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
           {contactOptions.map((item, i) => (
             <motion.div
               key={item.title}
