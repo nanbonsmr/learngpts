@@ -4,6 +4,7 @@ import { Menu, X, LogOut, Moon, Sun } from "lucide-react";
 import { useState } from "react";
 import { useTheme } from "next-themes";
 import { useAuth } from "@/hooks/useAuth";
+import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -21,9 +22,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 glass-card">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <Link to="/" className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-lg gradient-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-sm">AI</span>
-          </div>
+          <img src={logo} alt="LearnGPT" className="h-8 w-8 rounded-lg object-contain" />
           <span className="font-display font-bold text-lg text-foreground">LearnGPT</span>
         </Link>
 
