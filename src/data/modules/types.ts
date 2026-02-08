@@ -24,6 +24,17 @@ export interface ContentImage {
   caption?: string;
 }
 
+export interface AssignmentChecklistItem {
+  id: string;
+  label: string;
+}
+
+export interface Assignment {
+  instructions: string;
+  checklist: AssignmentChecklistItem[];
+  textPrompt?: string;
+}
+
 export interface Lesson {
   id: string;
   title: string;
@@ -37,6 +48,7 @@ export interface Lesson {
   suggestedPrompts?: SuggestedPrompt[];
   caseStudy?: CaseStudy;
   realData?: RealData;
+  assignment?: Assignment;
 }
 
 export interface QuizQuestion {
