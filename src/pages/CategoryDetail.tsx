@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import ShareModule from "@/components/ShareModule";
 import { categories } from "@/data/content";
 import { useAppStore } from "@/store/useAppStore";
 import { Progress } from "@/components/ui/progress";
@@ -45,9 +46,12 @@ const CategoryDetail = () => {
       <Navbar />
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-4xl">
-          <Button variant="ghost" asChild className="mb-6">
-            <Link to="/categories"><ArrowLeft className="mr-2 h-4 w-4" /> Back to Categories</Link>
-          </Button>
+          <div className="flex items-center justify-between mb-6">
+            <Button variant="ghost" asChild>
+              <Link to="/categories"><ArrowLeft className="mr-2 h-4 w-4" /> Back to Categories</Link>
+            </Button>
+            <ShareModule title={category.title} url={`/category/${category.id}`} />
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
