@@ -16,7 +16,7 @@ interface ShareModuleProps {
 
 const ShareModule = ({ title, url }: ShareModuleProps) => {
   const [copied, setCopied] = useState(false);
-  const fullUrl = `https://learngpt.app${url}`;
+  const fullUrl = `${window.location.origin}${url}`;
   const encodedUrl = encodeURIComponent(fullUrl);
   const encodedTitle = encodeURIComponent(title);
 
