@@ -156,6 +156,32 @@ export const resources = [
   { title: "Lovable", url: "https://lovable.dev", description: "Build full-stack web apps from natural language descriptions.", category: "AI Coding" },
   { title: "Bolt.new", url: "https://bolt.new", description: "AI-powered full-stack app builder in the browser.", category: "AI Coding" },
 
+  // Website Building & Lovable
+  { title: "Lovable Docs", url: "https://docs.lovable.dev", description: "Official documentation for Lovable AI — guides, tutorials, and feature reference.", category: "Website Building" },
+  { title: "Lovable Changelog", url: "https://lovable.dev/changelog", description: "Stay up-to-date with the latest Lovable features, improvements, and fixes.", category: "Website Building" },
+  { title: "Lovable YouTube", url: "https://youtube.com/@lovabledev", description: "Video tutorials and walkthroughs for building with Lovable AI.", category: "Website Building" },
+  { title: "Lovable Discord Community", url: "https://discord.gg/lovable", description: "Join the Lovable community — ask questions, share projects, and get help.", category: "Website Building" },
+
+  // SEO Tools
+  { title: "Google Search Console", url: "https://search.google.com/search-console", description: "Monitor your site's search performance, fix indexing issues, and submit sitemaps.", category: "SEO Tools" },
+  { title: "Google PageSpeed Insights", url: "https://pagespeed.web.dev", description: "Analyze your site's performance and get actionable optimization suggestions.", category: "SEO Tools" },
+  { title: "Ahrefs Webmaster Tools", url: "https://ahrefs.com/webmaster-tools", description: "Free SEO audit, backlink checker, and keyword monitoring for site owners.", category: "SEO Tools" },
+  { title: "Ubersuggest", url: "https://neilpatel.com/ubersuggest", description: "Free keyword research, site audit, and SEO analysis tool by Neil Patel.", category: "SEO Tools" },
+  { title: "AnswerThePublic", url: "https://answerthepublic.com", description: "Discover what questions people ask about any topic — great for blog content ideas.", category: "SEO Tools" },
+  { title: "Yoast SEO Guide", url: "https://yoast.com/seo-blog", description: "Comprehensive SEO guides and best practices from the Yoast team.", category: "SEO Tools" },
+  { title: "Schema Markup Generator", url: "https://technicalseo.com/tools/schema-markup-generator", description: "Generate JSON-LD structured data for rich search results — FAQ, articles, products.", category: "SEO Tools" },
+  { title: "Screaming Frog SEO Spider", url: "https://screamingfrog.co.uk/seo-spider", description: "Crawl your website to find broken links, audit redirects, and analyze metadata.", category: "SEO Tools" },
+
+  // Website Optimization
+  { title: "GTmetrix", url: "https://gtmetrix.com", description: "Test your website speed and get detailed performance reports with fix recommendations.", category: "Website Optimization" },
+  { title: "TinyPNG", url: "https://tinypng.com", description: "Compress PNG and JPEG images to drastically reduce file size without losing quality.", category: "Website Optimization" },
+  { title: "Coolors", url: "https://coolors.co", description: "Generate beautiful color palettes for your website design in seconds.", category: "Website Optimization" },
+  { title: "Google Fonts", url: "https://fonts.google.com", description: "Free web fonts library — browse, pair, and embed fonts for your website.", category: "Website Optimization" },
+  { title: "Responsive Design Checker", url: "https://responsivedesignchecker.com", description: "Test how your website looks on different screen sizes and devices.", category: "Website Optimization" },
+  { title: "Accessibility Checker (WAVE)", url: "https://wave.webaim.org", description: "Evaluate your site's accessibility and fix issues for all users.", category: "Website Optimization" },
+  { title: "Hotjar", url: "https://hotjar.com", description: "Heatmaps and session recordings to understand how visitors interact with your site.", category: "Website Optimization" },
+  { title: "Plausible Analytics", url: "https://plausible.io", description: "Privacy-friendly, lightweight web analytics — a simpler alternative to Google Analytics.", category: "Website Optimization" },
+
   // AI Productivity & Automation
   { title: "Zapier AI", url: "https://zapier.com/ai", description: "Automate workflows between 6,000+ apps with AI assistance.", category: "AI Productivity" },
   { title: "Make (Integromat)", url: "https://make.com", description: "Visual automation platform for complex multi-step workflows.", category: "AI Productivity" },
