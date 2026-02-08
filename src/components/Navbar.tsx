@@ -31,6 +31,7 @@ const Navbar = () => {
     { to: "/categories", label: "Categories" },
     { to: "/prompts", label: "Prompts" },
     { to: "/resources", label: "Resources" },
+    { to: "/certificate", label: "Certificate" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
