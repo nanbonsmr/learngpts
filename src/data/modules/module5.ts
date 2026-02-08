@@ -1,5 +1,8 @@
 import { Code } from "lucide-react";
 import module5Image from "@/assets/module-5-coding.jpg";
+import lesson51Image from "@/assets/lessons/lesson-5-1-code.jpg";
+import lesson52Image from "@/assets/lessons/lesson-5-2-debug.jpg";
+import lesson53Image from "@/assets/lessons/lesson-5-3-api.jpg";
 import type { Category } from "./types";
 
 const module5: Category = {
@@ -14,6 +17,7 @@ const module5: Category = {
     {
       id: "5-1-writing-code",
       title: "Lesson 5.1 – Writing Code",
+      image: lesson51Image,
       description:
         "ChatGPT can generate code in virtually any programming language. GitHub reports that developers using AI coding assistants are 55% more productive and complete tasks 55% faster.\n\n**Specify Clearly for Best Results:**\n• Programming language, framework, and version.\n• Input/output specifications and data types.\n• Error handling and edge case requirements.\n• Style preferences (functional vs OOP, naming conventions).\n• Testing requirements (unit tests, integration tests).\n\n**Types of Code Generation:**\n• Full components, hooks, and modules\n• Boilerplate and starter templates\n• Algorithm implementations with complexity analysis\n• Database queries (SQL, NoSQL, ORMs)\n• Configuration files (Docker, CI/CD, env)\n• Test suites with coverage targets\n• API endpoints with validation\n\n**The Code Generation Workflow:**\n1. Describe the requirement in plain English\n2. Specify language, framework, and constraints\n3. Review the generated code (NEVER blindly copy-paste)\n4. Ask for explanations of complex parts\n5. Request error handling and edge cases\n6. Ask for unit tests\n\n**Best Practices:**\n1. Always review generated code before using it — AI can introduce subtle bugs.\n2. Ask for TypeScript types and interfaces upfront.\n3. Request comments for complex logic.\n4. Ask for performance considerations.\n5. Use it for first drafts, then refine with your domain knowledge.",
       examplePrompt:
@@ -44,6 +48,7 @@ const module5: Category = {
     {
       id: "5-2-debugging",
       title: "Lesson 5.2 – Debugging & Explaining Code",
+      image: lesson52Image,
       description:
         "Debugging is where ChatGPT truly shines — and where it saves developers the most time. Studies show developers spend 35-50% of their time debugging (Cambridge University), making this AI's highest-ROI coding use case.\n\n**Finding Errors:**\n• Paste your code + error message → get explanation and fix.\n• Identify logical errors that don't throw exceptions.\n• Spot performance anti-patterns and memory leaks.\n• Detect security vulnerabilities (SQL injection, XSS, etc.).\n\n**Explaining Code:**\n• Line-by-line explanations at any skill level.\n• Translate code logic into plain English.\n• Explain complex algorithms, design patterns, and architectures.\n• Understand legacy code or unfamiliar codebases.\n\n**The Debugging Prompt Formula:**\n1. **Error message** — Include the FULL error, including stack trace.\n2. **Code context** — Not just the failing line, but surrounding functions.\n3. **Expected vs actual** — \"I expected X to happen, but Y happened instead.\"\n4. **Environment** — Language version, framework, OS, relevant packages.\n5. **What you've tried** — Prevents ChatGPT from suggesting things you've already done.\n\n**Security Review:**\nAsk ChatGPT: \"Review this code for security vulnerabilities. Check for: SQL injection, XSS, CSRF, authentication bypasses, and data exposure.\" This catches issues that many developers miss.",
       examplePrompt:
@@ -74,6 +79,7 @@ const module5: Category = {
     {
       id: "5-3-project-api",
       title: "Lesson 5.3 – Project & API Integration",
+      image: lesson53Image,
       description:
         "ChatGPT can help you plan entire projects and integrate APIs — tasks that traditionally require senior-level experience.\n\n**Project Planning:**\n• Generate project ideas based on your skill level and interests.\n• Create full project structures (file trees, architecture diagrams).\n• Design database schemas with relationships and indexes.\n• Write README files, documentation, and contributing guides.\n• Plan sprint structures and user stories.\n\n**API Integration:**\n• Generate fetch/axios code for any REST API with proper error handling.\n• Create TypeScript types from API documentation or sample responses.\n• Build webhook handlers with validation and security.\n• Implement authentication flows (OAuth 2.0, JWT, API keys).\n• Handle pagination, rate limiting, and retry logic.\n\n**Automation Scripts:**\n• Cron jobs for scheduled tasks (data backups, report generation).\n• Data processing pipelines (CSV → Database, API → Spreadsheet).\n• File manipulation scripts (batch rename, format conversion).\n• Deployment configurations (Docker, GitHub Actions, Vercel).\n\n**The Full-Stack ChatGPT Workflow:**\n1. Describe your project idea in detail.\n2. Ask for architecture recommendations.\n3. Generate the folder structure and boilerplate.\n4. Build feature by feature with AI assistance.\n5. Add tests and error handling.\n6. Generate documentation.",
       examplePrompt:
