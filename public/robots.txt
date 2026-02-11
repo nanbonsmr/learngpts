@@ -13,4 +13,9 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://learngpt.app/sitemap.xml
+Disallow: /dashboard
+Disallow: /profile
+Disallow: /onboarding
+Disallow: /analytics
+
+Sitemap: https://learngpts.lovable.app/sitemap.xml

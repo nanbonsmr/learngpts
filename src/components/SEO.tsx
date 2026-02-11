@@ -9,11 +9,11 @@ interface SEOProps {
   jsonLd?: Record<string, unknown>;
 }
 
-const SITE_NAME = "LearnGPT";
+const SITE_NAME = "LearnGPTs";
 const DEFAULT_DESCRIPTION =
-  "Learn how to use ChatGPT for business, study, content creation, coding, and daily productivity with practical lessons and real prompts.";
+  "Master ChatGPT with 24+ hands-on lessons covering prompt engineering, business automation, coding, freelancing & productivity. Free certificate included.";
 const DEFAULT_IMAGE = "/og-image.png";
-const BASE_URL = "https://learngpt.app";
+const BASE_URL = "https://learngpts.lovable.app";
 
 const SEO = ({
   title,
