@@ -18,13 +18,26 @@ const Index = () => {
         canonical="/"
         jsonLd={{
           "@context": "https://schema.org",
-          "@type": "WebSite",
-          name: "LearnGPT",
-          url: "https://learngpt.app",
-          description: "Learn how to use ChatGPT for business, study, content creation, coding, and daily productivity with practical lessons and real prompts.",
+          "@type": "Course",
+          name: "ChatGPT Mastery Program",
+          description: "Master ChatGPT with 24+ hands-on lessons covering prompt engineering, business automation, coding, freelancing & productivity.",
+          provider: {
+            "@type": "Organization",
+            name: "LearnGPTs",
+            sameAs: "https://learngpts.lovable.app",
+          },
+          url: "https://learngpts.lovable.app",
+          isAccessibleForFree: true,
+          numberOfCredits: 24,
+          educationalLevel: "Beginner to Advanced",
+          hasCourseInstance: {
+            "@type": "CourseInstance",
+            courseMode: "Online",
+            courseWorkload: "PT10H",
+          },
           potentialAction: {
             "@type": "SearchAction",
-            target: "https://learngpt.app/prompts?q={search_term_string}",
+            target: "https://learngpts.lovable.app/prompts?q={search_term_string}",
             "query-input": "required name=search_term_string",
           },
         }}
